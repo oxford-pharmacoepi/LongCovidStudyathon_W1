@@ -41,7 +41,7 @@ do_exclusion <- function(cdm, cohort, id, S_start_date) {
   
   # Historical influenza 90 days
   cohort <- cohort %>%
-    addCohortIntersectDays(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 38, window = list(c(-90,-1)), order = "last", nameStyle = "last_flu") %>%
+    addCohortIntersectDays(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 3, window = list(c(-90,-1)), order = "last", nameStyle = "last_flu") %>%
     computeQuery()
   
   cohort <- cohort %>% dplyr::filter(is.na(.data$last_flu)) %>% computeQuery()
@@ -176,7 +176,7 @@ create_outcome <- function(cdm, window, new_ids) {
   return(currenttable)
 }
 
-create_any_cohort <- function(cdm, window, cohort_id, tableold) {
+create_any_cohort <- function(cdm, window, cohort_id, tableold, name) {
   cohorts <- tableold %>%
     dplyr::filter(cohort_definition_id %in% window)
   
@@ -187,20 +187,22 @@ create_any_cohort <- function(cdm, window, cohort_id, tableold) {
   
   any_cohort <- cohorts %>% dplyr::select(-cohort_definition_id) %>%
     dplyr::mutate(cohort_definition_id = cohort_id) %>% 
-    dplyr::select(subject_id,cohort_definition_id,cohort_start_date,cohort_end_date)
+    dplyr::select(subject_id,cohort_definition_id,cohort_start_date,cohort_end_date) %>%
+    computeQuery()
 
-  tableold <- dplyr::union_all(tableold,any_cohort) %>% compute()
+  tableold <- dplyr::union_all(tableold,any_cohort) %>% 
+    computeQuery()
 
   write_csv(
     attrition,
-    file = here::here(output_at, paste0("attrition_any_LC.csv"))
+    file = here::here(output_at, paste0("attrition_any_",name,".csv"))
   )
 
   return(tableold)  
 }
 
 do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id, tableName) {
-  bases <- c("Inf", "Reinf", "testNeg")
+  bases <- c("inf", "reinf", "testneg")
   base <- cdm[[BaseCohortsName]] %>% 
     dplyr::filter(cohort_definition_id == base_cohort_id) %>%
     compute()

@@ -35,21 +35,20 @@ cdm[[BaseCohortsName]] <- cdm[[BaseCohortsName]] %>%
 calculate_IP <- function(base_id, outcome_id, tableBase, tableOutcome) {
   message("Calculating IP for base ", base_id," and outcome ",outcome_id)
   
-  base_name <- ifelse(base_id == 1, "Inf",
-                      ifelse(base_id == 2, "Reinf", 
-                             ifelse(base_id == 3, "Neg", NA)))
+  base_name <- ifelse(base_id == 1, "inf",
+                      ifelse(base_id == 2, "reinf", 
+                             ifelse(base_id == 3, "testneg", NA)))
   
   date_to_consider <- as.Date("2020-09-01")
   date_to_end <-as.Date(latest_data_availability)
   
   message("- No strata and sex strata")
   # No strata and sex strata
-  cdm$denominator <- IncidencePrevalence::generateDenominatorCohortSet(
+  cdm <- IncidencePrevalence::generateDenominatorCohortSet(
     cdm =  cdm,
     strataTable = tableBase,
+    cohortDateRange = c(as.Date(date_to_consider), as.Date(date_to_end)),
     strataCohortId = base_id,
-    startDate = date_to_consider,
-    endDate = date_to_end,
     sex = c("Male", "Female", "Both")
   )
   if(cdm$denominator %>% tally() %>% pull() != 0) {
@@ -62,23 +61,18 @@ calculate_IP <- function(base_id, outcome_id, tableBase, tableOutcome) {
       interval = c("years","months","overall"),
       completeDatabaseIntervals = FALSE, minCellCount = 5)
     
-    study_results <- IncidencePrevalence::gatherIncidencePrevalenceResults(
-      cdm=cdm, resultList=list(inc))
-    
-    IncidencePrevalence::exportIncidencePrevalenceResults(
-      result=study_results, zipName=paste0(names_cohorts[i],"_AllandSex"),
-      outputFolder=output_ip) 
+    write.csv(inc, file = here::here(output_ip, paste0(names_cohorts[i],"_AllandSex")))
+    write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0(names_cohorts[i],"_AllandSex_attrition")))
   }
   }
   }
   message("- Age strata")
   # Age strata
-  cdm$denominator <- IncidencePrevalence::generateDenominatorCohortSet(
+  cdm <- IncidencePrevalence::generateDenominatorCohortSet(
     cdm =  cdm,
     strataTable = tableBase,
     strataCohortId = base_id,
-    startDate = date_to_consider,
-    endDate = date_to_end,
+    cohortDateRange = c(as.Date(date_to_consider), as.Date(date_to_end)),
     ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,120))
   )
   if(cdm$denominator %>% tally() %>% pull() != 0) {
@@ -92,14 +86,9 @@ calculate_IP <- function(base_id, outcome_id, tableBase, tableOutcome) {
       completeDatabaseIntervals = FALSE,  
        minCellCount = 5)
 
-  study_results <- IncidencePrevalence::gatherIncidencePrevalenceResults(
-    cdm=cdm, resultList=list(inc))
-  write.csv(study_results$incidence_estimates, file = here::here(output_ip, paste0("estimates_",names_cohorts[i],"_Age")))
-  write.csv(study_results$incidence_attrition, file = here::here(output_ip, paste0("attrition_",names_cohorts[i],"_Age")))
-  
-  IncidencePrevalence::exportIncidencePrevalenceResults(
-    result=study_results, zipName=paste0(names_cohorts[i],"_Age"),
-    outputFolder=output_ip) 
+    write.csv(inc, file = here::here(output_ip, paste0(names_cohorts[i],"_Age")))
+    write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0(names_cohorts[i],"_Age_attrition")))
+    
   }
   }
   }
@@ -131,10 +120,9 @@ calculate_IP_allpop <- function(outcome_id, date_to_consider, date_to_end, table
   
   message("- No strata and sex strata")
   # No strata and sex strata
-  cdm$denominator <- IncidencePrevalence::generateDenominatorCohortSet(
+  cdm <- IncidencePrevalence::generateDenominatorCohortSet(
     cdm =  cdm,
-    startDate = date_to_consider,
-    endDate = date_to_end,
+    cohortDateRange = c(as.Date(date_to_consider), as.Date(date_to_end)),
     sex = c("Male", "Female", "Both")
   )
   if(cdm$denominator %>% tally() %>% pull() != 0) {
@@ -147,38 +135,29 @@ calculate_IP_allpop <- function(outcome_id, date_to_consider, date_to_end, table
       interval = c("years","months","overall"),
       completeDatabaseIntervals = FALSE,  
        minCellCount = 5)
-  study_results <- IncidencePrevalence::gatherIncidencePrevalenceResults(
-    cdm=cdm, resultList=list(inc))
-  # CHANGE to get csvs, not ZIPS!
-  
-  if(name == "LC") {
-    exportIncidencePrevalenceResults(
-      result=study_results, zipName=paste0("Allpop_",names_cohorts[i],"_AllandSex"), 
-      outputFolder=output_ip) 
-  }  else if (name == "PASC") {
-    exportIncidencePrevalenceResults(
-      result=study_results, zipName=paste0("Allpop_",names_lc[i],"_AllandSex"), 
-      outputFolder=output_ip) 
-  } else if (name == "MC") {
-    exportIncidencePrevalenceResults(
-      result=study_results, zipName=paste0("Allpop_",names_pasc[i],"_AllandSex"), 
-      outputFolder=output_ip) 
-  } else {
-    exportIncidencePrevalenceResults(
-      result=study_results, zipName=paste0("Allpop_",names_mc[i],"_AllandSex"), 
-      outputFolder=output_ip) 
-  }
-  
+    
+    if(name == "LC") {
+      write.csv(inc, file = here::here(output_ip, paste0("Allpop_",names_lc[i],"_AllandSex")))
+      write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_",names_lc[i],"_AllandSex_attrition")))
+    } else if(name == "PASC") {
+      write.csv(inc, file = here::here(output_ip, paste0("Allpop_",names_pasc[i],"_AllandSex")))
+      write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_",names_pasc[i],"_AllandSex_attrition")))
+    } else if(name == "MC") {
+      write.csv(inc, file = here::here(output_ip, paste0("Allpop_",names_mc[i],"_AllandSex")))
+      write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_",names_mc[i],"_AllandSex_attrition")))
+    } else {
+      write.csv(inc, file = here::here(output_ip, paste0("Allpop_",names_cohorts[i],"_AllandSex")))
+      write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_",names_cohorts[i],"_AllandSex_attrition")))
+    }
   }
   }
   }
   
   message("- Age strata")
   # Age strata
-  cdm$denominator <- IncidencePrevalence::generateDenominatorCohortSet(
+  cdm <- IncidencePrevalence::generateDenominatorCohortSet(
     cdm =  cdm,
-    startDate = date_to_consider,
-    endDate = date_to_end,
+    cohortDateRange = c(as.Date(date_to_consider), as.Date(date_to_end)),
     ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,120))
   )
   if(cdm$denominator %>% tally() %>% pull() != 0) {
@@ -192,24 +171,18 @@ calculate_IP_allpop <- function(outcome_id, date_to_consider, date_to_end, table
         completeDatabaseIntervals = FALSE,  
          minCellCount = 5)
 
-  study_results <- IncidencePrevalence::gatherIncidencePrevalenceResults(
-    cdm=cdm, resultList=list(inc))
   if(name == "LC") {
-    exportIncidencePrevalenceResults(
-      result=study_results, zipName=paste0("Allpop_",names_cohorts[i],"_Age"), 
-      outputFolder=output_ip) 
-  }  else if (name == "PASC") {
-    exportIncidencePrevalenceResults(
-      result=study_results, zipName=paste0("Allpop_",names_lc[i],"_Age"), 
-      outputFolder=output_ip) 
-  } else if (name == "MC") {
-    exportIncidencePrevalenceResults(
-      result=study_results, zipName=paste0("Allpop_",names_pasc[i],"_Age"), 
-      outputFolder=output_ip) 
+    write.csv(inc, file = here::here(output_ip, paste0("Allpop_",names_lc[i],"_Age")))
+    write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_",names_lc[i],"_Age_attrition")))
+  } else if(name == "PASC") {
+    write.csv(inc, file = here::here(output_ip, paste0("Allpop_",names_pasc[i],"_Age")))
+    write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_",names_pasc[i],"_Age_attrition")))
+  } else if(name == "MC") {
+    write.csv(inc, file = here::here(output_ip, paste0("Allpop_",names_mc[i],"_Age")))
+    write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_",names_mc[i],"_Age_attrition")))
   } else {
-    exportIncidencePrevalenceResults(
-      result=study_results, zipName=paste0("Allpop_",names_mc[i],"_Age"), 
-      outputFolder=output_ip) 
+    write.csv(inc, file = here::here(output_ip, paste0("Allpop_",names_cohorts[i],"_Age")))
+    write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_",names_cohorts[i],"_Age_attrition")))
   }
   
     }

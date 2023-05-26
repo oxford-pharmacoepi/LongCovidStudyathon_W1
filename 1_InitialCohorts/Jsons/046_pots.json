@@ -1,0 +1,368 @@
+{
+  "ConceptSets": [
+    {
+      "id": 0,
+      "name": "POTS",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "371073003",
+              "CONCEPT_ID": 4159659,
+              "CONCEPT_NAME": "Postural orthostatic tachycardia syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "195069001",
+              "CONCEPT_ID": 4108830,
+              "CONCEPT_NAME": "Atrial paroxysmal tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "276796006",
+              "CONCEPT_ID": 4171269,
+              "CONCEPT_NAME": "Atrial tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "278482008",
+              "CONCEPT_ID": 4081675,
+              "CONCEPT_NAME": "Atrioventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "251165007",
+              "CONCEPT_ID": 4088503,
+              "CONCEPT_NAME": "AV junctional (nodal) tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "427084000",
+              "CONCEPT_ID": 4140598,
+              "CONCEPT_NAME": "ECG: sinus tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "164895002",
+              "CONCEPT_ID": 4064871,
+              "CONCEPT_NAME": "EKG: ventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "164891006",
+              "CONCEPT_ID": 4064869,
+              "CONCEPT_NAME": "Electrocardiogram: paroxysmal atrial tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "162992001",
+              "CONCEPT_ID": 4061094,
+              "CONCEPT_NAME": "O/E - pulse rate tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "195070000",
+              "CONCEPT_ID": 4108241,
+              "CONCEPT_NAME": "Paroxysmal atrioventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "195071001",
+              "CONCEPT_ID": 4111546,
+              "CONCEPT_NAME": "Paroxysmal junctional tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "195072008",
+              "CONCEPT_ID": 4111698,
+              "CONCEPT_NAME": "Paroxysmal nodal tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "67198005",
+              "CONCEPT_ID": 317893,
+              "CONCEPT_NAME": "Paroxysmal supraventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "12026006",
+              "CONCEPT_ID": 313792,
+              "CONCEPT_NAME": "Paroxysmal tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "66657009",
+              "CONCEPT_ID": 437579,
+              "CONCEPT_NAME": "Paroxysmal ventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "11092001",
+              "CONCEPT_ID": 4007310,
+              "CONCEPT_NAME": "Sinus tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "6456007",
+              "CONCEPT_ID": 4275423,
+              "CONCEPT_NAME": "Supraventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "3424008",
+              "CONCEPT_ID": 444070,
+              "CONCEPT_NAME": "Tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "426300009",
+              "CONCEPT_ID": 4144463,
+              "CONCEPT_NAME": "Tachycardia-induced cardiomyopathy",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "25569003",
+              "CONCEPT_ID": 4103295,
+              "CONCEPT_NAME": "Ventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "ConditionOccurrence": {
+          "CodesetId": 0
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 0,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "All"
+    }
+  },
+  "QualifiedLimit": {
+    "Type": "First"
+  },
+  "ExpressionLimit": {
+    "Type": "First"
+  },
+  "InclusionRules": [],
+  "CensoringCriteria": [],
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 0
+  },
+  "CensorWindow": {},
+  "cdmVersionRange": ">=5.0.0"
+}

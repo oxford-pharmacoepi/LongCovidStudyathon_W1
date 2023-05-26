@@ -1,0 +1,3743 @@
+{
+  "ConceptSets": [
+    {
+      "id": 1,
+      "name": "dysautonomia_symptoms",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "716376007",
+              "CONCEPT_ID": 37396530,
+              "CONCEPT_NAME": "Abnormal flushing and sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2016-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "14662005",
+              "CONCEPT_ID": 4033541,
+              "CONCEPT_NAME": "Absence of sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "77427003",
+              "CONCEPT_ID": 4299640,
+              "CONCEPT_NAME": "Activity intolerance",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "430042004",
+              "CONCEPT_ID": 4331091,
+              "CONCEPT_NAME": "Acute pandysautonomia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2009-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "721055005",
+              "CONCEPT_ID": 36715393,
+              "CONCEPT_NAME": "Acute vestibular syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2017-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "239050000",
+              "CONCEPT_ID": 4082365,
+              "CONCEPT_NAME": "Alopecia, nail dystrophy, ophthalmic complications, thyroid dysfunction, hypohidrosis, ephelides, enteropathy and respiratory tract infections",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "63024004",
+              "CONCEPT_ID": 4269196,
+              "CONCEPT_NAME": "Alternobaric vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "239013001",
+              "CONCEPT_ID": 4033517,
+              "CONCEPT_NAME": "Anonychia with bizarre flexural pigmentation",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "702535006",
+              "CONCEPT_ID": 45765567,
+              "CONCEPT_NAME": "Anxiety about breathlessness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2015-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "277826004",
+              "CONCEPT_ID": 4080138,
+              "CONCEPT_NAME": "Anxiety about sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "15177007",
+              "CONCEPT_ID": 4034840,
+              "CONCEPT_NAME": "Apoplectic vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "444868004",
+              "CONCEPT_ID": 40481146,
+              "CONCEPT_NAME": "Asymmetric sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2010-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "403376000",
+              "CONCEPT_ID": 4296361,
+              "CONCEPT_NAME": "Asymmetrical hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "21615003",
+              "CONCEPT_ID": 197857,
+              "CONCEPT_NAME": "Autonomic facial cephalgia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "239011004",
+              "CONCEPT_ID": 4033064,
+              "CONCEPT_NAME": "Basan syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "278086000",
+              "CONCEPT_ID": 4082928,
+              "CONCEPT_NAME": "Baseline tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "782459000",
+              "CONCEPT_ID": 36684294,
+              "CONCEPT_NAME": "Bilateral primary focal hyperhidrosis of palm of hands",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "782463007",
+              "CONCEPT_ID": 36684298,
+              "CONCEPT_NAME": "Bilateral primary focal hyperhidrosis of sole of feet",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "397702004",
+              "CONCEPT_ID": 4219740,
+              "CONCEPT_NAME": "Borg Breathlessness Score finding",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "401293009",
+              "CONCEPT_ID": 4222446,
+              "CONCEPT_NAME": "Borg Breathlessness Score: 10 maximal",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "401280004",
+              "CONCEPT_ID": 4223033,
+              "CONCEPT_NAME": "Borg Breathlessness Score: 2 slight",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "401281000",
+              "CONCEPT_ID": 4223034,
+              "CONCEPT_NAME": "Borg Breathlessness Score: 3 moderate",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "401282007",
+              "CONCEPT_ID": 4223035,
+              "CONCEPT_NAME": "Borg Breathlessness Score: 4 somewhat severe",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "401284008",
+              "CONCEPT_ID": 4223036,
+              "CONCEPT_NAME": "Borg Breathlessness Score: 5 severe",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "401286005",
+              "CONCEPT_ID": 4220640,
+              "CONCEPT_NAME": "Borg Breathlessness Score: 6 severe",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "401290007",
+              "CONCEPT_ID": 4223037,
+              "CONCEPT_NAME": "Borg Breathlessness Score: 7 very severe",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "401291006",
+              "CONCEPT_ID": 4223038,
+              "CONCEPT_NAME": "Borg Breathlessness Score: 8 very severe",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "401292004",
+              "CONCEPT_ID": 4220641,
+              "CONCEPT_NAME": "Borg Breathlessness Score: 9 very, very severe",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "161968007",
+              "CONCEPT_ID": 4060315,
+              "CONCEPT_NAME": "Bumping heart",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "272036004",
+              "CONCEPT_ID": 4158491,
+              "CONCEPT_NAME": "C/O - debility - malaise",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "79117005",
+              "CONCEPT_ID": 4193374,
+              "CONCEPT_NAME": "Central muscle fatigue",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "95815000",
+              "CONCEPT_ID": 4319017,
+              "CONCEPT_NAME": "Central positional vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "84769001",
+              "CONCEPT_ID": 4224944,
+              "CONCEPT_NAME": "Cervical vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "52702003",
+              "CONCEPT_ID": 432738,
+              "CONCEPT_NAME": "Chronic fatigue syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "75181005",
+              "CONCEPT_ID": 4327471,
+              "CONCEPT_NAME": "Chronic orthostatic hypotension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "12151000119105",
+              "CONCEPT_ID": 43530629,
+              "CONCEPT_NAME": "Chronic vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2013-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "248245006",
+              "CONCEPT_ID": 4086849,
+              "CONCEPT_NAME": "Clammy sweat",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "702363009",
+              "CONCEPT_ID": 45765428,
+              "CONCEPT_NAME": "Cold-induced sweating syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2015-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "83547004",
+              "CONCEPT_ID": 4308436,
+              "CONCEPT_NAME": "Cold sweat",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "433147009",
+              "CONCEPT_ID": 4334791,
+              "CONCEPT_NAME": "Combined visual and hearing impairment",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2009-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "403378004",
+              "CONCEPT_ID": 4296362,
+              "CONCEPT_NAME": "Compensatory hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103292006",
+              "CONCEPT_ID": 4012875,
+              "CONCEPT_NAME": "Constant vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "438113009",
+              "CONCEPT_ID": 4229670,
+              "CONCEPT_NAME": "Convulsive syncope",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2009-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "69017006",
+              "CONCEPT_ID": 4287867,
+              "CONCEPT_NAME": "Cortical vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "403380005",
+              "CONCEPT_ID": 4301020,
+              "CONCEPT_NAME": "Craniofacial hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "725097006",
+              "CONCEPT_ID": 37110742,
+              "CONCEPT_NAME": "Crisponi syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2017-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "111980002",
+              "CONCEPT_ID": 4009948,
+              "CONCEPT_NAME": "Diminished sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "735548000",
+              "CONCEPT_ID": 42536612,
+              "CONCEPT_NAME": "Dissociative neurological symptom disorder co-occurrent with dizziness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "404640003",
+              "CONCEPT_ID": 4223938,
+              "CONCEPT_NAME": "Dizziness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "271789005",
+              "CONCEPT_ID": 433316,
+              "CONCEPT_NAME": "Dizziness and giddiness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "762244004",
+              "CONCEPT_ID": 42539141,
+              "CONCEPT_NAME": "Dizziness following neck extension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "429530004",
+              "CONCEPT_ID": 4180463,
+              "CONCEPT_NAME": "Dizziness of unknown cause",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2008-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "919621000000103",
+              "CONCEPT_ID": 45769954,
+              "CONCEPT_NAME": "Dizziness on lying still",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2015-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "794101000000105",
+              "CONCEPT_ID": 44806935,
+              "CONCEPT_NAME": "Dizziness on neck extension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2014-04-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "407645004",
+              "CONCEPT_ID": 4250121,
+              "CONCEPT_NAME": "Dizziness on standing up",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "315018008",
+              "CONCEPT_ID": 4198449,
+              "CONCEPT_NAME": "Dizzy spells",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "427084000",
+              "CONCEPT_ID": 4140598,
+              "CONCEPT_NAME": "ECG: sinus tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "31457007",
+              "CONCEPT_ID": 4152074,
+              "CONCEPT_NAME": "Effort syncope",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "403374002",
+              "CONCEPT_ID": 4296360,
+              "CONCEPT_NAME": "Emotional sweating affecting palms and soles",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1089971000000104",
+              "CONCEPT_ID": 35610139,
+              "CONCEPT_NAME": "eMRC (extended Medical Research Council) dyspnoea scale grade 1",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1089981000000102",
+              "CONCEPT_ID": 35610140,
+              "CONCEPT_NAME": "eMRC (extended Medical Research Council) dyspnoea scale grade 2",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1089991000000100",
+              "CONCEPT_ID": 35610141,
+              "CONCEPT_NAME": "eMRC (extended Medical Research Council) dyspnoea scale grade 3",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1090011000000104",
+              "CONCEPT_ID": 35610143,
+              "CONCEPT_NAME": "eMRC (extended Medical Research Council) dyspnoea scale grade 4",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1090001000000101",
+              "CONCEPT_ID": 35610142,
+              "CONCEPT_NAME": "eMRC (extended Medical Research Council) dyspnoea scale grade 5a",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1090021000000105",
+              "CONCEPT_ID": 35610144,
+              "CONCEPT_NAME": "eMRC (extended Medical Research Council) dyspnoea scale grade 5b",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103282003",
+              "CONCEPT_ID": 4011937,
+              "CONCEPT_NAME": "Essential vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "52613005",
+              "CONCEPT_ID": 4203638,
+              "CONCEPT_NAME": "Excessive sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103018003",
+              "CONCEPT_ID": 4012691,
+              "CONCEPT_NAME": "Exertional dizziness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "84229001",
+              "CONCEPT_ID": 4223659,
+              "CONCEPT_NAME": "Fatigue",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "247820003",
+              "CONCEPT_ID": 4085669,
+              "CONCEPT_NAME": "Fear of sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "297978007",
+              "CONCEPT_ID": 4181859,
+              "CONCEPT_NAME": "Finding of sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "274673004",
+              "CONCEPT_ID": 4168217,
+              "CONCEPT_NAME": "Generalized hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "231518004",
+              "CONCEPT_ID": 4333681,
+              "CONCEPT_NAME": "Globus abdominalis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "238758008",
+              "CONCEPT_ID": 4033862,
+              "CONCEPT_NAME": "Gustatory hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "56046002",
+              "CONCEPT_ID": 4206627,
+              "CONCEPT_NAME": "Gustatory sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103303007",
+              "CONCEPT_ID": 4011943,
+              "CONCEPT_NAME": "Hearing loss remits during vertigo attacks",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "161874006",
+              "CONCEPT_ID": 4060217,
+              "CONCEPT_NAME": "Heavy feeling",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "161873000",
+              "CONCEPT_ID": 4059010,
+              "CONCEPT_NAME": "Heavy legs",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "366008",
+              "CONCEPT_ID": 4278308,
+              "CONCEPT_NAME": "Hidromeiosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "79215008",
+              "CONCEPT_ID": 4193763,
+              "CONCEPT_NAME": "High frequency muscle fatigue",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103286000",
+              "CONCEPT_ID": 4012871,
+              "CONCEPT_NAME": "Horizontal vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "224962007",
+              "CONCEPT_ID": 4075830,
+              "CONCEPT_NAME": "Hot sweats",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "61933008",
+              "CONCEPT_ID": 4265037,
+              "CONCEPT_NAME": "Hyperadrenergic postural hypotension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "312230002",
+              "CONCEPT_ID": 138565,
+              "CONCEPT_NAME": "Hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "403377009",
+              "CONCEPT_ID": 4301019,
+              "CONCEPT_NAME": "Hyperhidrosis due to causalgia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "303089000",
+              "CONCEPT_ID": 4123306,
+              "CONCEPT_NAME": "Hyperhidrosis of axilla",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "303090009",
+              "CONCEPT_ID": 4116465,
+              "CONCEPT_NAME": "Hyperhidrosis of palms",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "70247006",
+              "CONCEPT_ID": 4290512,
+              "CONCEPT_NAME": "Hypoadrenergic postural hypotension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "239049000",
+              "CONCEPT_ID": 4033189,
+              "CONCEPT_NAME": "Hypohidrosis with neurolabyrinthitis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "400036004",
+              "CONCEPT_ID": 4266199,
+              "CONCEPT_NAME": "Hypoplastic enamel-onycholysis-hypohidrosis syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "58077008",
+              "CONCEPT_ID": 4240219,
+              "CONCEPT_NAME": "Hypotensive syncope",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "56271007",
+              "CONCEPT_ID": 4209306,
+              "CONCEPT_NAME": "Hypothermia-sweating syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "230668007",
+              "CONCEPT_ID": 4045726,
+              "CONCEPT_NAME": "Idiopathic diffuse hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "425582007",
+              "CONCEPT_ID": 4137871,
+              "CONCEPT_NAME": "Inappropriate sinus tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "297216006",
+              "CONCEPT_ID": 4178416,
+              "CONCEPT_NAME": "Increasing breathlessness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "102590007",
+              "CONCEPT_ID": 4010477,
+              "CONCEPT_NAME": "Intermittent palpitations",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103291004",
+              "CONCEPT_ID": 4011938,
+              "CONCEPT_NAME": "Intermittent vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "240221000000102",
+              "CONCEPT_ID": 44790770,
+              "CONCEPT_NAME": "Irregular palpitations",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2014-04-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "449834008",
+              "CONCEPT_ID": 42709962,
+              "CONCEPT_NAME": "Lateral vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2012-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "386705008",
+              "CONCEPT_ID": 4297376,
+              "CONCEPT_NAME": "Lightheadedness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "274674005",
+              "CONCEPT_ID": 141652,
+              "CONCEPT_NAME": "Localized hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "271795006",
+              "CONCEPT_ID": 439926,
+              "CONCEPT_NAME": "Malaise and fatigue",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "391120009",
+              "CONCEPT_ID": 4310059,
+              "CONCEPT_NAME": "Medical Research Council Dyspnoea scale grade 1",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "391123006",
+              "CONCEPT_ID": 4193263,
+              "CONCEPT_NAME": "Medical Research Council Dyspnoea scale grade 2",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "391124000",
+              "CONCEPT_ID": 4307188,
+              "CONCEPT_NAME": "Medical Research Council Dyspnoea scale grade 3",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "391125004",
+              "CONCEPT_ID": 4310172,
+              "CONCEPT_NAME": "Medical Research Council Dyspnoea scale grade 4",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "391126003",
+              "CONCEPT_ID": 4192279,
+              "CONCEPT_NAME": "Medical Research Council Dyspnoea scale grade 5",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "852051000000107",
+              "CONCEPT_ID": 44809070,
+              "CONCEPT_NAME": "Minimal breathlessness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2014-04-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1099371000000102",
+              "CONCEPT_ID": 36685567,
+              "CONCEPT_NAME": "mMRC (modified Medical Research Council) dyspnoea scale grade 0",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1099381000000100",
+              "CONCEPT_ID": 36685568,
+              "CONCEPT_NAME": "mMRC (modified Medical Research Council) dyspnoea scale grade 1",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1099391000000103",
+              "CONCEPT_ID": 36685569,
+              "CONCEPT_NAME": "mMRC (modified Medical Research Council) dyspnoea scale grade 2",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1099401000000100",
+              "CONCEPT_ID": 36685570,
+              "CONCEPT_NAME": "mMRC (modified Medical Research Council) dyspnoea scale grade 3",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1099411000000103",
+              "CONCEPT_ID": 36685571,
+              "CONCEPT_NAME": "mMRC (modified Medical Research Council) dyspnoea scale grade 4",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "377171000000101",
+              "CONCEPT_ID": 44793522,
+              "CONCEPT_NAME": "Moderate chronic fatigue syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2014-04-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "232289002",
+              "CONCEPT_ID": 4337455,
+              "CONCEPT_NAME": "Multisensory dizziness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "80449002",
+              "CONCEPT_ID": 4214612,
+              "CONCEPT_NAME": "Muscle fatigue",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "427461000",
+              "CONCEPT_ID": 4142895,
+              "CONCEPT_NAME": "Near syncope",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "191962000",
+              "CONCEPT_ID": 433177,
+              "CONCEPT_NAME": "Neurocirculatory asthenia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "42984000",
+              "CONCEPT_ID": 4181178,
+              "CONCEPT_NAME": "Night sweats",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "449835009",
+              "CONCEPT_ID": 42709963,
+              "CONCEPT_NAME": "Nocturnal vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2012-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "50611000119105",
+              "CONCEPT_ID": 43530752,
+              "CONCEPT_NAME": "Non-labyrinthine vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2013-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "162713002",
+              "CONCEPT_ID": 4037508,
+              "CONCEPT_NAME": "O/E - collapse - syncope",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "162692003",
+              "CONCEPT_ID": 4036930,
+              "CONCEPT_NAME": "O/E - diminished sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "162992001",
+              "CONCEPT_ID": 4061094,
+              "CONCEPT_NAME": "O/E - pulse rate tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "162683001",
+              "CONCEPT_ID": 4036927,
+              "CONCEPT_NAME": "O/E - sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "50041000",
+              "CONCEPT_ID": 4172609,
+              "CONCEPT_NAME": "Objective vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "78977005",
+              "CONCEPT_ID": 4194391,
+              "CONCEPT_NAME": "Ocular vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "28651003",
+              "CONCEPT_ID": 319041,
+              "CONCEPT_NAME": "Orthostatic hypotension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "718685006",
+              "CONCEPT_ID": 36713737,
+              "CONCEPT_NAME": "Orthostatic hypotension co-occurrent and due to Parkinson's disease",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2017-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "249988004",
+              "CONCEPT_ID": 4097171,
+              "CONCEPT_NAME": "Oscillation of surroundings",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "403375001",
+              "CONCEPT_ID": 4299805,
+              "CONCEPT_NAME": "Palmoplantar hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "80313002",
+              "CONCEPT_ID": 315078,
+              "CONCEPT_NAME": "Palpitations",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "248648003",
+              "CONCEPT_ID": 4095613,
+              "CONCEPT_NAME": "Palpitations - rapid",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "428919002",
+              "CONCEPT_ID": 4178485,
+              "CONCEPT_NAME": "Palpitations with regular rhythm",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2008-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103290003",
+              "CONCEPT_ID": 4012874,
+              "CONCEPT_NAME": "Paroxysmal vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "17099003",
+              "CONCEPT_ID": 4063119,
+              "CONCEPT_NAME": "Peripheral muscle fatigue",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103293001",
+              "CONCEPT_ID": 4011333,
+              "CONCEPT_NAME": "Persistent postural perceptual dizziness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103284002",
+              "CONCEPT_ID": 4012870,
+              "CONCEPT_NAME": "Positional vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "444042007",
+              "CONCEPT_ID": 40484614,
+              "CONCEPT_NAME": "Postexertional fatigue",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2010-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103017008",
+              "CONCEPT_ID": 4012243,
+              "CONCEPT_NAME": "Postural dizziness",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "735908000",
+              "CONCEPT_ID": 42539580,
+              "CONCEPT_NAME": "Postural hypotension following exercise",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "371073003",
+              "CONCEPT_ID": 4159659,
+              "CONCEPT_NAME": "Postural orthostatic tachycardia syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "51771007",
+              "CONCEPT_ID": 4202045,
+              "CONCEPT_NAME": "Postviral fatigue syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "248657009",
+              "CONCEPT_ID": 4088740,
+              "CONCEPT_NAME": "Pounding heart",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "427794001",
+              "CONCEPT_ID": 443556,
+              "CONCEPT_NAME": "Primary focal hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2008-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "10677551000119108",
+              "CONCEPT_ID": 35608916,
+              "CONCEPT_NAME": "Primary focal hyperhidrosis of axilla",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2018-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "10677591000119103",
+              "CONCEPT_ID": 36685965,
+              "CONCEPT_NAME": "Primary focal hyperhidrosis of face",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "10677631000119103",
+              "CONCEPT_ID": 36685966,
+              "CONCEPT_NAME": "Primary focal hyperhidrosis of palm of hand",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "782458008",
+              "CONCEPT_ID": 36684293,
+              "CONCEPT_NAME": "Primary focal hyperhidrosis of palm of left hand",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "782457003",
+              "CONCEPT_ID": 36684292,
+              "CONCEPT_NAME": "Primary focal hyperhidrosis of palm of right hand",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "10677671000119100",
+              "CONCEPT_ID": 36685967,
+              "CONCEPT_NAME": "Primary focal hyperhidrosis of sole of foot",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "782462002",
+              "CONCEPT_ID": 36684297,
+              "CONCEPT_NAME": "Primary focal hyperhidrosis of sole of left foot",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "782461009",
+              "CONCEPT_ID": 36684296,
+              "CONCEPT_NAME": "Primary focal hyperhidrosis of sole of right foot",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "191953002",
+              "CONCEPT_ID": 4103430,
+              "CONCEPT_NAME": "Psychogenic air hunger",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "191973007",
+              "CONCEPT_ID": 4100533,
+              "CONCEPT_NAME": "Psychogenic constipation",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "191972002",
+              "CONCEPT_ID": 4100532,
+              "CONCEPT_NAME": "Psychogenic dyspepsia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "442099003",
+              "CONCEPT_ID": 40481844,
+              "CONCEPT_NAME": "Psychogenic fatigue",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2009-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "386537007",
+              "CONCEPT_ID": 4296535,
+              "CONCEPT_NAME": "Psychogenic pylorospasm",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "386572005",
+              "CONCEPT_ID": 4302523,
+              "CONCEPT_NAME": "Psychogenic syncope",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "84438001",
+              "CONCEPT_ID": 4309357,
+              "CONCEPT_NAME": "Pure autonomic failure",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "773663004",
+              "CONCEPT_ID": 36676689,
+              "CONCEPT_NAME": "Rapid-onset childhood obesity, hypothalamic dysfunction, hypoventilation, autonomic dysregulation syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2019-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "250002000",
+              "CONCEPT_ID": 4092860,
+              "CONCEPT_NAME": "Rapid fatigue of gait",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "240231000000100",
+              "CONCEPT_ID": 44790771,
+              "CONCEPT_NAME": "Regular palpitations",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2014-04-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "403379007",
+              "CONCEPT_ID": 4293697,
+              "CONCEPT_NAME": "Rusting syndrome from hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "239043004",
+              "CONCEPT_ID": 4033642,
+              "CONCEPT_NAME": "Sandman-Andra syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "230659005",
+              "CONCEPT_ID": 4045633,
+              "CONCEPT_NAME": "Segmental autonomic dysfunction",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "230660000",
+              "CONCEPT_ID": 4048050,
+              "CONCEPT_NAME": "Segmental hyperhidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "230661001",
+              "CONCEPT_ID": 4048157,
+              "CONCEPT_NAME": "Segmental hypohidrosis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "373931001",
+              "CONCEPT_ID": 4161600,
+              "CONCEPT_NAME": "Sensation of heaviness in limbs",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103298005",
+              "CONCEPT_ID": 4012422,
+              "CONCEPT_NAME": "Severe vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103299002",
+              "CONCEPT_ID": 4011335,
+              "CONCEPT_NAME": "Severe vertigo, acute onset",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "7454002",
+              "CONCEPT_ID": 4251921,
+              "CONCEPT_NAME": "Simple partial seizure with autonomic dysfunction",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "11092001",
+              "CONCEPT_ID": 4007310,
+              "CONCEPT_NAME": "Sinus tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "234167006",
+              "CONCEPT_ID": 4121812,
+              "CONCEPT_NAME": "Situational syncope",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "231517009",
+              "CONCEPT_ID": 4333680,
+              "CONCEPT_NAME": "Somatoform autonomic dysfunction",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "268650001",
+              "CONCEPT_ID": 437536,
+              "CONCEPT_NAME": "Somatoform autonomic dysfunction - gastrointestinal tract",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "191952007",
+              "CONCEPT_ID": 437841,
+              "CONCEPT_NAME": "Somatoform autonomic dysfunction - respiratory tract",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "398051009",
+              "CONCEPT_ID": 4134868,
+              "CONCEPT_NAME": "Staff member fatigued",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "399090003",
+              "CONCEPT_ID": 4218878,
+              "CONCEPT_NAME": "Subjective vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "415690000",
+              "CONCEPT_ID": 4188566,
+              "CONCEPT_NAME": "Sweating",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "300938001",
+              "CONCEPT_ID": 4114016,
+              "CONCEPT_NAME": "Sweating attack",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "186694006",
+              "CONCEPT_ID": 136030,
+              "CONCEPT_NAME": "Sweating fever",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "248246007",
+              "CONCEPT_ID": 4093839,
+              "CONCEPT_NAME": "Sweating on one side of body",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "52526003",
+              "CONCEPT_ID": 4200839,
+              "CONCEPT_NAME": "Sweating problem",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "161857006",
+              "CONCEPT_ID": 4059005,
+              "CONCEPT_NAME": "Sweating symptom",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "248249000",
+              "CONCEPT_ID": 4093841,
+              "CONCEPT_NAME": "Sweaty armpits",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "248247003",
+              "CONCEPT_ID": 4093840,
+              "CONCEPT_NAME": "Sweaty feet",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "248248008",
+              "CONCEPT_ID": 4087473,
+              "CONCEPT_NAME": "Sweaty hands",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "230664009",
+              "CONCEPT_ID": 4045723,
+              "CONCEPT_NAME": "Sympathotonic orthostatic hypotension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "271594007",
+              "CONCEPT_ID": 135360,
+              "CONCEPT_NAME": "Syncope",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "309585006",
+              "CONCEPT_ID": 4206148,
+              "CONCEPT_NAME": "Syncope and collapse",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "723148003",
+              "CONCEPT_ID": 36716914,
+              "CONCEPT_NAME": "Syncope due to autonomic failure",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2017-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "432524006",
+              "CONCEPT_ID": 4162208,
+              "CONCEPT_NAME": "Syncope due to orthostatic hypotension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2009-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "272030005",
+              "CONCEPT_ID": 4152505,
+              "CONCEPT_NAME": "Syncope symptom",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "12979003",
+              "CONCEPT_ID": 442024,
+              "CONCEPT_NAME": "Transient heat fatigue",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "87881000119106",
+              "CONCEPT_ID": 46273634,
+              "CONCEPT_NAME": "Tremor due to orthostatic hypotension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2015-07-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "398665005",
+              "CONCEPT_ID": 4162976,
+              "CONCEPT_NAME": "Vasovagal syncope",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "719823007",
+              "CONCEPT_ID": 36714539,
+              "CONCEPT_NAME": "Ventricular extrasystoles with syncope, perodactyly and Robin sequence syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "2017-01-31",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103288004",
+              "CONCEPT_ID": 4012872,
+              "CONCEPT_NAME": "Vertical vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "87118001",
+              "CONCEPT_ID": 444297,
+              "CONCEPT_NAME": "Vertiginous syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "399153001",
+              "CONCEPT_ID": 439383,
+              "CONCEPT_NAME": "Vertigo",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103304001",
+              "CONCEPT_ID": 4011336,
+              "CONCEPT_NAME": "Vertigo associated with recent change in eyeglasses",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103287009",
+              "CONCEPT_ID": 4012419,
+              "CONCEPT_NAME": "Vertigo on awakening",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103296009",
+              "CONCEPT_ID": 4011334,
+              "CONCEPT_NAME": "Vertigo preceded by chewing",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103295008",
+              "CONCEPT_ID": 4012876,
+              "CONCEPT_NAME": "Vertigo preceded by prolonged dental work or oral surgery",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103300005",
+              "CONCEPT_ID": 4011940,
+              "CONCEPT_NAME": "Vertigo preceded by unsteady feeling",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103289007",
+              "CONCEPT_ID": 4012420,
+              "CONCEPT_NAME": "Vertigo produced by neck hyperextension",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103294007",
+              "CONCEPT_ID": 4012421,
+              "CONCEPT_NAME": "Vertigo produced by neck pressure",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103302002",
+              "CONCEPT_ID": 4011942,
+              "CONCEPT_NAME": "Vertigo when trying to urinate",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "103301009",
+              "CONCEPT_ID": 4012877,
+              "CONCEPT_NAME": "Vertigo, acute onset with vomiting and inability to stand",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "POTS",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "371073003",
+              "CONCEPT_ID": 4159659,
+              "CONCEPT_NAME": "Postural orthostatic tachycardia syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "195069001",
+              "CONCEPT_ID": 4108830,
+              "CONCEPT_NAME": "Atrial paroxysmal tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "276796006",
+              "CONCEPT_ID": 4171269,
+              "CONCEPT_NAME": "Atrial tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "278482008",
+              "CONCEPT_ID": 4081675,
+              "CONCEPT_NAME": "Atrioventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "251165007",
+              "CONCEPT_ID": 4088503,
+              "CONCEPT_NAME": "AV junctional (nodal) tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "427084000",
+              "CONCEPT_ID": 4140598,
+              "CONCEPT_NAME": "ECG: sinus tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "164895002",
+              "CONCEPT_ID": 4064871,
+              "CONCEPT_NAME": "EKG: ventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "164891006",
+              "CONCEPT_ID": 4064869,
+              "CONCEPT_NAME": "Electrocardiogram: paroxysmal atrial tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "162992001",
+              "CONCEPT_ID": 4061094,
+              "CONCEPT_NAME": "O/E - pulse rate tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "195070000",
+              "CONCEPT_ID": 4108241,
+              "CONCEPT_NAME": "Paroxysmal atrioventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "195071001",
+              "CONCEPT_ID": 4111546,
+              "CONCEPT_NAME": "Paroxysmal junctional tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "195072008",
+              "CONCEPT_ID": 4111698,
+              "CONCEPT_NAME": "Paroxysmal nodal tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "67198005",
+              "CONCEPT_ID": 317893,
+              "CONCEPT_NAME": "Paroxysmal supraventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "12026006",
+              "CONCEPT_ID": 313792,
+              "CONCEPT_NAME": "Paroxysmal tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "66657009",
+              "CONCEPT_ID": 437579,
+              "CONCEPT_NAME": "Paroxysmal ventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "11092001",
+              "CONCEPT_ID": 4007310,
+              "CONCEPT_NAME": "Sinus tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "6456007",
+              "CONCEPT_ID": 4275423,
+              "CONCEPT_NAME": "Supraventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "3424008",
+              "CONCEPT_ID": 444070,
+              "CONCEPT_NAME": "Tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "426300009",
+              "CONCEPT_ID": 4144463,
+              "CONCEPT_NAME": "Tachycardia-induced cardiomyopathy",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "25569003",
+              "CONCEPT_ID": 4103295,
+              "CONCEPT_NAME": "Ventricular tachycardia",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED",
+              "VALID_START_DATE": "1970-01-01",
+              "VALID_END_DATE": "2099-12-31"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "ConditionOccurrence": {
+          "CodesetId": 2
+        }
+      },
+      {
+        "ConditionOccurrence": {
+          "CodesetId": 1
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 0,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "All"
+    }
+  },
+  "QualifiedLimit": {
+    "Type": "First"
+  },
+  "ExpressionLimit": {
+    "Type": "First"
+  },
+  "InclusionRules": [],
+  "CensoringCriteria": [],
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 0
+  },
+  "CensorWindow": {},
+  "cdmVersionRange": ">=5.0.0"
+}

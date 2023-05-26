@@ -28,7 +28,13 @@ OverlapCohortsName <- paste0(table_stem,"_overlapcohorts")
 source(here::here("functions.R"))
 
 # Create vector with all names
-CohortNames <- c(InitialCohortsName, BaseCohortsName, LongCovidCohortsName)
+if(!onlyLC){
+CohortNames <- c(InitialCohortsName, BaseCohortsName, LongCovidCohortsName,
+                 PASCCohortsName, MCCohortsName, OverlapCohortsName)
+} else {
+CohortNames <- c(InitialCohortsName, BaseCohortsName, LongCovidCohortsName,
+                 OverlapCohortsName)
+}
 
 # Read initial cohorts
 if (readInitialCohorts){

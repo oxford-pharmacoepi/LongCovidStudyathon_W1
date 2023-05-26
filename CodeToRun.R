@@ -75,9 +75,6 @@ doIncidencePrevalence <- TRUE
 # If you can only run Long Covid related analyses
 onlyLC <- FALSE
 
-# If you have some problems with dates in initial cohorts
-instantiate_diff <- FALSE
-
 # Run the study
 source(here("RunStudy.R"))
 

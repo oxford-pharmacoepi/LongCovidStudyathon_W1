@@ -133,22 +133,22 @@ message("Getting outcome cohorts")
 info(logger, '-- Getting outcome cohorts')
 
 # Long covid symptoms
-table_lc <- create_outcome(cdm, window = c(3:27), new_ids = c(1:25))
+table_lc <- create_outcome(cdm, window = c(5:29), new_ids = c(1:25))
 
 names_final_cohorts <- rbind(names_final_cohorts,
                              dplyr::tibble(table_name = LongCovidCohortsName,
                                            cohort_definition_id = c(1:25),
-                                           cohort_name = Initial_cohorts$cohort_name[3:27]))
+                                           cohort_name = Initial_cohorts$cohort_name[5:29]))
 
 # Any LC symptom
-table_lc <- create_any_cohort(cdm, c(1:25), cohort_id = 26, tableold = table_lc)
+table_lc <- create_any_cohort(cdm, c(1:25), cohort_id = 26, tableold = table_lc, name = "lc")
 
 names_final_cohorts <- rbind(names_final_cohorts,
                              dplyr::tibble(table_name = LongCovidCohortsName,
                                            cohort_definition_id = 26, cohort_name = "any_lc_symptom"))
 
 # LC code
-table_lccode <- create_outcome(cdm, window = 33, new_ids = 27)
+table_lccode <- create_outcome(cdm, window = 4, new_ids = 27)
 
 names_final_cohorts <- rbind(names_final_cohorts,
                              dplyr::tibble(table_name = LongCovidCohortsName,
@@ -174,15 +174,15 @@ cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema
 
 if(!onlyLC) {
   # PASC events
-  table_pasc <- create_outcome(cdm, window = c(39:48), new_ids = c(1:10))
+  table_pasc <- create_outcome(cdm, window = c(30:39), new_ids = c(1:10))
   
   names_final_cohorts <- rbind(names_final_cohorts,
                                dplyr::tibble(table_name = PascCohortsName,
                                              cohort_definition_id = c(1:10),
-                                             cohort_name = Initial_cohorts$cohort_name[39:48]))
+                                             cohort_name = Initial_cohorts$cohort_name[30:39]))
   
   # Any PASC event
-  table_pasc <- create_any_cohort(cdm, c(1:10), cohort_id = 11, tableold = table_pasc)
+  table_pasc <- create_any_cohort(cdm, c(1:10), cohort_id = 11, tableold = table_pasc, name = "pasc")
   
   names_final_cohorts <- rbind(names_final_cohorts,
                                dplyr::tibble(table_name = PascCohortsName,
@@ -202,12 +202,12 @@ if(!onlyLC) {
   )
   
   # Medical conditions
-  table_mc <- create_outcome(cdm, window = c(49:71), new_ids = c(1:23)) # change
+  table_mc <- create_outcome(cdm, window = c(40:49), new_ids = c(1:10)) 
   
   names_final_cohorts <- rbind(names_final_cohorts,
                                dplyr::tibble(table_name = MCCohortsName,
-                                             cohort_definition_id = c(1:23),
-                                             cohort_name = Initial_cohorts$cohort_name[49:71]))
+                                             cohort_definition_id = c(1:10),
+                                             cohort_name = Initial_cohorts$cohort_name[40:49]))
   
 
   # Save attributes of the cohort
@@ -240,7 +240,7 @@ if(!onlyLC) {
       names_final_cohorts <- rbind(names_final_cohorts,
                                    dplyr::tibble(table_name = OverlapCohortsName,
                                                  cohort_definition_id = 26*(b-1) + i, 
-                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+2])))
+                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+4])))
       if(cdm[[LongCovidCohortsName]] %>% 
          dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
         overlap_cohorts[[26*(b-1) + i]] <- do_overlap(cdm, b, i, 26*(b-1) + i, tableName = LongCovidCohortsName)
@@ -262,7 +262,7 @@ if(!onlyLC) {
       names_final_cohorts <- rbind(names_final_cohorts,
                                    dplyr::tibble(table_name = OverlapCohortsName,
                                                  cohort_definition_id = 26*(b-1) + i, 
-                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+2])))
+                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+4])))
       if(cdm[[LongCovidCohortsName]] %>% 
          dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
         overlap_cohorts[[26*(b-1) + i]] <- do_overlap(cdm, b, i, 26*(b-1) + i, tableName = LongCovidCohortsName)
@@ -287,6 +287,10 @@ if(!onlyLC) {
     overlap_all_lc <- overlap_cohorts %>%
       dplyr::filter(cohort_definition_id %in% c((26*(b-1) + 1):(26*(b-1) + 25))) %>%
       dplyr::mutate(cohort_definition_id == 78 + b) %>%
+      dplyr::group_by(subject_id) %>%
+      dplyr::arrange(cohort_start_date) %>%
+      dplyr::filter(dplyr::row_number() == 1) %>%
+      dplyr::ungroup() %>%
       computeQuery()
     overlap_cohorts <- dplyr::union_all(
       overlap_cohorts,
@@ -302,6 +306,10 @@ if(!onlyLC) {
     overlap_all_lc <- overlap_cohorts %>%
       dplyr::filter(cohort_definition_id %in% c((26*(b-1) + 1):(26*(b-1) + 25))) %>%
       dplyr::mutate(cohort_definition_id == 52 + b) %>%
+      dplyr::group_by(subject_id) %>%
+      dplyr::arrange(cohort_start_date) %>%
+      dplyr::filter(dplyr::row_number() == 1) %>%
+      dplyr::ungroup() %>%
       computeQuery()
     overlap_cohorts <- dplyr::union_all(
       overlap_cohorts,
@@ -322,7 +330,7 @@ if(!onlyLC) {
       names_final_cohorts <- rbind(names_final_cohorts,
                                    dplyr::tibble(table_name = OverlapCohortsName,
                                                  cohort_definition_id = 81 + 10*(b-1) + i, 
-                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+37])))
+                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+29])))
       if(cdm[[PascCohortsName]] %>% 
          dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
         overlap_cohorts_pasc[[10*(b-1) + i]] <- do_overlap(cdm, b, i, 81 + 10*(b-1) + i, tableName = PascCohortsName)
@@ -337,6 +345,10 @@ if(!onlyLC) {
     overlap_all_pasc <- overlap_cohorts_pasc %>%
       dplyr::filter(cohort_definition_id %in% c((81 + 10*(b-1) + 1):(81 + 10*(b-1) + 10))) %>%
       dplyr::mutate(cohort_definition_id == 81 + 30 + b) %>%
+      dplyr::group_by(subject_id) %>%
+      dplyr::arrange(cohort_start_date) %>%
+      dplyr::filter(dplyr::row_number() == 1) %>%
+      dplyr::ungroup() %>%
       computeQuery()
     overlap_cohorts_pasc <- dplyr::union_all(
       overlap_cohorts_pasc,
@@ -354,11 +366,11 @@ if(!onlyLC) {
     for(i in c(1:23)) {
       names_final_cohorts <- rbind(names_final_cohorts,
                                    dplyr::tibble(table_name = OverlapCohortsName,
-                                                 cohort_definition_id = 81 + 33 + 23*(b-1) + i, 
-                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+48])))
+                                                 cohort_definition_id = 81 + 33 + 10*(b-1) + i, 
+                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+39])))
       if(cdm[[MCCohortsName]] %>% 
          dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
-        overlap_cohorts_mc[[23*(b-1) + i]] <- do_overlap(cdm, b, i, 81 + 33 + 23*(b-1) + i, tableName = MCCohortsName)
+        overlap_cohorts_mc[[10*(b-1) + i]] <- do_overlap(cdm, b, i, 81 + 33 + 10*(b-1) + i, tableName = MCCohortsName)
       }
     }
   }
