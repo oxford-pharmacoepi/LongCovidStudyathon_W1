@@ -20,20 +20,23 @@ level(logger) <- "INFO"
 InitialCohortsName <- paste0(table_stem,"_initialcohorts")
 BaseCohortsName <- paste0(table_stem,"_basecohorts")
 LongCovidCohortsName <- paste0(table_stem,"_lccohorts")
-PASCCohortsName <- paste0(table_stem,"_pasccohorts")
+PascCohortsName <- paste0(table_stem,"_pasccohorts")
 MCCohortsName <- paste0(table_stem,"_mccohorts")
-OverlapCohortsName <- paste0(table_stem,"_overlapcohorts")
+OverlapCohortsInfName <- paste0(table_stem,"_overlapinfcohorts")
+OverlapCohortsReinfName <- paste0(table_stem,"_overlapreinfcohorts")
+OverlapCohortsTestnegName <- paste0(table_stem,"_overlaptestnegcohorts")
 
 # Read functions needed throughout the study
 source(here::here("functions.R"))
 
 # Create vector with all names
 if(!onlyLC){
-CohortNames <- c(InitialCohortsName, BaseCohortsName, LongCovidCohortsName,
-                 PASCCohortsName, MCCohortsName, OverlapCohortsName)
+  CohortNames <- c(InitialCohortsName, BaseCohortsName, LongCovidCohortsName,
+                   PascCohortsName, MCCohortsName, OverlapCohortsInfName,
+                   OverlapCohortsReinfName,OverlapCohortsTestnegName)
 } else {
-CohortNames <- c(InitialCohortsName, BaseCohortsName, LongCovidCohortsName,
-                 OverlapCohortsName)
+  CohortNames <- c(InitialCohortsName, BaseCohortsName, LongCovidCohortsName,
+                   OverlapCohortsInfName, OverlapCohortsReinfName)
 }
 
 # Read initial cohorts

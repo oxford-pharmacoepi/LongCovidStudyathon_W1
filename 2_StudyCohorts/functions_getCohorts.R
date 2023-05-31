@@ -61,36 +61,31 @@ do_exclusion <- function(cdm, cohort, id, S_start_date) {
   
   # censor on observation_end, death, end of covid testing or study end date
   cohort <- cohort %>% 
-      addCohortIntersectDate(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 1, window = list(c(1, 365)), order = "first", nameStyle = "next_covid") %>%
-      computeQuery()
-    # censor on observation_end, death, study end date, or covid (re)infection
-    cohort <- cohort %>% dplyr::mutate(one_year_date = 
-                                         lubridate::as_date(.data$cohort_start_date + lubridate::days(365))) %>%
-      dplyr::mutate(end_covid_testing_date =  as.Date(.env$covid_end_date)) %>% # asked in the CodeToRun file
-      dplyr::left_join(observation_death, by = c("subject_id")) %>%
-      compute()
-    
-    cohort <- cohort %>% dplyr::mutate(one_year_date = 
-                                         !!CDMConnector::dateadd("cohort_start_date", 365)) %>%
-      dplyr::mutate(end_covid_testing_date =  as.Date(.env$covid_end_date)) %>% # asked in the CodeToRun file
-      left_join(observation_death, by = c("subject_id")) %>%
-      computeQuery()
-    cohort <- cohort %>% 
-      dplyr::mutate(cohort_end_date = !!CDMConnector::asDate(ifelse(
-        !(is.na(.data$death_date)) & .data$observation_period_end_date > .data$death_date, .data$death_date, .data$observation_period_end_date))) %>%
-      dplyr::mutate(cohort_end_date = !!CDMConnector::asDate(ifelse(
-        !(is.na(.data$next_covid)) & .data$cohort_end_date > .data$next_covid, .data$next_covid, .data$cohort_end_date))) %>%
-      dplyr::mutate(cohort_end_date = !!CDMConnector::asDate(ifelse(
-        !(is.na(.data$one_year_date)) & .data$cohort_end_date > .data$one_year_date, .data$one_year_date, .data$cohort_end_date))) %>%
-      dplyr::mutate(cohort_end_date = !!CDMConnector::asDate(ifelse(
-        !(is.na(.data$end_covid_testing_date)) & .data$cohort_end_date > .data$end_covid_testing_date, .data$end_covid_testing_date, .data$cohort_end_date))) %>%
-      dplyr::mutate(follow_up_days = !!CDMConnector::datediff("cohort_start_date", "cohort_end_date")) %>% 
-      dplyr::mutate(reason_censoring = ifelse(!(is.na(.data$death_date)) & cohort_end_date == .data$death_date, "death",
-                                              ifelse(cohort_end_date == .data$one_year_date, "one year of follow_up",
-                                                     ifelse(cohort_end_date == .data$end_covid_testing_date, "End of COVID-19 testing",
-                                                            ifelse(cohort_end_date == .data$observation_period_end_date,
-                                                                   "end of data collection or exit from database",
-                                                                  ifelse(cohort_end_date == .data$next_covid, "covid infection", NA )))))) %>% computeQuery()
+    addCohortIntersectDate(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 1, window = list(c(1, 365)), order = "first", nameStyle = "next_covid") %>%
+    computeQuery()
+  # censor on observation_end, death, study end date, or covid (re)infection
+  cohort <- cohort %>% dplyr::mutate(one_year_date = 
+                                       lubridate::as_date(.data$cohort_start_date + lubridate::days(365))) %>%
+    dplyr::mutate(end_covid_testing_date =  as.Date(.env$covid_end_date)) %>% # asked in the CodeToRun file
+    dplyr::left_join(observation_death, by = c("subject_id")) %>%
+    computeQuery()
+  
+  cohort <- cohort %>% 
+    dplyr::mutate(cohort_end_date = !!CDMConnector::asDate(ifelse(
+      !(is.na(.data$death_date)) & .data$observation_period_end_date > .data$death_date, .data$death_date, .data$observation_period_end_date))) %>%
+    dplyr::mutate(cohort_end_date = !!CDMConnector::asDate(ifelse(
+      !(is.na(.data$next_covid)) & .data$cohort_end_date > .data$next_covid, .data$next_covid, .data$cohort_end_date))) %>%
+    dplyr::mutate(cohort_end_date = !!CDMConnector::asDate(ifelse(
+      !(is.na(.data$one_year_date)) & .data$cohort_end_date > .data$one_year_date, .data$one_year_date, .data$cohort_end_date))) %>%
+    dplyr::mutate(cohort_end_date = !!CDMConnector::asDate(ifelse(
+      !(is.na(.data$end_covid_testing_date)) & .data$cohort_end_date > .data$end_covid_testing_date, .data$end_covid_testing_date, .data$cohort_end_date))) %>%
+    dplyr::mutate(follow_up_days = !!CDMConnector::datediff("cohort_start_date", "cohort_end_date")) %>% 
+    dplyr::mutate(reason_censoring = ifelse(!(is.na(.data$death_date)) & cohort_end_date == .data$death_date, "death",
+                                            ifelse(cohort_end_date == .data$one_year_date, "one year of follow_up",
+                                                   ifelse(cohort_end_date == .data$end_covid_testing_date, "End of COVID-19 testing",
+                                                          ifelse(cohort_end_date == .data$observation_period_end_date,
+                                                                 "end of data collection or exit from database",
+                                                                 ifelse(cohort_end_date == .data$next_covid, "covid infection", NA )))))) %>% computeQuery()
   
   # exclude if follow-up < 120 days
   excluded_followup <- cohort %>% dplyr::filter(.data$follow_up_days < 120) %>%
@@ -189,15 +184,15 @@ create_any_cohort <- function(cdm, window, cohort_id, tableold, name) {
     dplyr::mutate(cohort_definition_id = cohort_id) %>% 
     dplyr::select(subject_id,cohort_definition_id,cohort_start_date,cohort_end_date) %>%
     computeQuery()
-
+  
   tableold <- dplyr::union_all(tableold,any_cohort) %>% 
     computeQuery()
-
+  
   write_csv(
     attrition,
     file = here::here(output_at, paste0("attrition_any_",name,".csv"))
   )
-
+  
   return(tableold)  
 }
 
@@ -238,7 +233,7 @@ do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id
   overlap <- overlap %>% 
     addCohortIntersectFlag(
       cdm, targetCohortTable = tableName, targetCohortId = outcome_cohort_id, 
-      window = list(c(-180,-1)), order = "last", nameStyle = "event") %>%
+      window = list(c(-180,-1)), nameStyle = "event") %>%
     compute()
   if("event" %in% colnames(overlap)) {
     overlap <- overlap %>% 
@@ -264,4 +259,97 @@ do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id
   
   return(overlap)
 }
+
+overlap_per_base <- function(base_id, base_name, base_table) {
+  message("Getting overlap lc cohorts")
+  info(logger, '--- Getting overlap lc cohorts')
+  
+  # Infection + 1 LC symptom / LC code, any symptom, 1 PASC event, any PASC, 1 MC
+  overlap_cohorts <- cdm[[BaseCohortsName]] %>%
+    dplyr::filter(dplyr::row_number() == 1) %>%
+    computeQuery()
+  
+  for(i in c(1:25)) {
+    if(cdm[[LongCovidCohortsName]] %>% 
+       dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
+      overlap_cohorts <- dplyr::union_all(
+        overlap_cohorts,
+        do_overlap(cdm, base_id, i, i, tableName = LongCovidCohortsName)
+      ) %>%
+        computeQuery()
+    }
+  }
+  
+  if(cdm[[LongCovidCohortsName]] %>% 
+     dplyr::filter(cohort_definition_id == 27) %>% tally() %>% pull() > 5) {
+    overlap_cohorts <- dplyr::union_all(
+      overlap_cohorts,
+      do_overlap(cdm, b, 27, 26, tableName = LongCovidCohortsName)
+    ) %>%
+      computeQuery()
+  }
+  
+  overlap_all_lc <- overlap_cohorts %>%
+    dplyr::filter(cohort_definition_id %in% c(1:26)) %>%
+    dplyr::mutate(cohort_definition_id = 27) %>%
+    dplyr::group_by(subject_id) %>%
+    dbplyr::window_order(cohort_start_date) %>%
+    dplyr::filter(dplyr::row_number() == 1) %>%
+    dplyr::ungroup() %>%
+    computeQuery()
+  
+  overlap_cohorts <- dplyr::union_all(
+    overlap_cohorts,
+    overlap_all_lc
+  ) %>%
+    computeQuery()
+  
+  if(!onlyLC) {
+    message("Getting overlap pasc cohorts")
+    info(logger, '--- Getting overlap pasc cohorts')
+    
+    for(i in c(1:10)) {
+      if(cdm[[PascCohortsName]] %>% 
+         dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
+        overlap_cohorts <- dplyr::union_all(
+          overlap_cohorts,
+          do_overlap(cdm, base_id, i, 27 + i, tableName = PascCohortsName)
+        ) %>%
+          computeQuery()
+      }
+    }
+  }
+  
+  overlap_all_pasc <- overlap_cohorts %>%
+    dplyr::filter(cohort_definition_id %in% c(28:37)) %>%
+    dplyr::mutate(cohort_definition_id = 38) %>%
+    dplyr::group_by(subject_id) %>%
+    dbplyr::window_order(cohort_start_date) %>%
+    dplyr::filter(dplyr::row_number() == 1) %>%
+    dplyr::ungroup() %>%
+    computeQuery()
+  overlap_cohorts <- dplyr::union_all(
+    overlap_cohorts,
+    overlap_all_pasc
+  ) %>%
+    computeQuery()
+  
+  message("Getting overlap mc cohorts")
+  info(logger, '--- Getting overlap mc cohorts')
+  
+  for(i in c(1:10)) {
+    if(cdm[[MCCohortsName]] %>% 
+       dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
+      overlap_cohorts <- dplyr::union_all(
+        overlap_cohorts,
+        do_overlap(cdm, base_id, i, 38 + i, tableName = MCCohortsName)
+      ) %>%
+        computeQuery()
+    }
+  }
+  
+  return(overlap_cohorts)
+  
+}
+
 

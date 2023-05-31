@@ -41,12 +41,12 @@ negative_init <- cdm[[InitialCohortsName]] %>%
   ) %>% computeQuery() 
 
 covid <- do_exclusion(cdm, newinf_init, id = 1,
-                      S_start_date = study_start_date, covidcensor = FALSE)
-if(!onlyLC) {
+                      S_start_date = study_start_date)
+if(!onlyLC && negative_init %>% dplyr::tally() %>% dplyr::pull() != 0) {
   nocovid <- do_exclusion(cdm, negative_init, id = 2,
                           S_start_date = study_start_date)
 }
-  
+
 # New infection "final": inclusion/exclusion
 new_infection <- covid[[1]]
 new_infection <- new_infection %>% dplyr::mutate(cohort_definition_id = 1) %>%
@@ -69,7 +69,7 @@ attrition_censor_positive <- covid[[4]]
 attrition_censor_positive <- attrition_censor_positive %>% dplyr::mutate(cohort_definition_id = 1) %>%
   compute()
 
-if(!onlyLC) {
+if(!onlyLC && negative_init %>% dplyr::tally() %>% dplyr::pull() != 0) {
   # Tested negative "final"
   negativetest <- nocovid[[1]]
   negativetest <- negativetest %>% dplyr::mutate(cohort_definition_id = 3) %>%
@@ -111,16 +111,16 @@ if(!onlyLC) {
 }
 
 # Save attributes of the cohort
-attr(new_infection, "cohort_set") <- names_final_cohorts %>% 
+attr(bases, "cohort_set") <- names_final_cohorts %>% 
   dplyr::filter(table_name == BaseCohortsName) %>%
   dplyr::select(cohort_definition_id, cohort_name) 
 
-attr(new_infection, "cohort_count") <- getCohortCount(new_infection)
+attr(bases, "cohort_count") <- getCohortCount(bases)
 
 cdm[[BaseCohortsName]] <- newGeneratedCohortSet(
-  cohortRef = computeQuery(new_infection, BaseCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
-  cohortSetRef = insertTable(attr(new_infection, "cohort_set"), cdm, paste0(BaseCohortsName, "_set")),
-  cohortCountRef = insertTable(attr(new_infection, "cohort_count"), cdm, paste0(BaseCohortsName, "_count"))
+  cohortRef = computeQuery(bases, BaseCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
+  cohortSetRef = insertTable(attr(bases, "cohort_set"), cdm, paste0(BaseCohortsName, "_set")),
+  cohortCountRef = insertTable(attr(bases, "cohort_count"), cdm, paste0(BaseCohortsName, "_count"))
 )
 
 cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
@@ -209,7 +209,7 @@ if(!onlyLC) {
                                              cohort_definition_id = c(1:10),
                                              cohort_name = Initial_cohorts$cohort_name[40:49]))
   
-
+  
   # Save attributes of the cohort
   attr(table_mc, "cohort_set") <- names_final_cohorts %>% 
     dplyr::filter(table_name == MCCohortsName) %>%
@@ -223,198 +223,147 @@ if(!onlyLC) {
     cohortCountRef = insertTable(attr(table_mc, "cohort_count"), cdm, paste0(MCCohortsName, "_count"))
   )
   
-  cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
-                    cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
-                                     PascCohortsName,MCCohortsName))
+  if(!onlyLC) {
+    cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+                      cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
+                                       PascCohortsName,MCCohortsName))
+  } else {
+    cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+                      cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName
+                                       ))
+  }
+
 }
 
 # --------------------------------------------------------------------
 # OVERLAPING COHORTS
 
-# Infection/Reinfection/Test Negative + 1 LC symptom / LC code
-overlap_cohorts <- list()
-bases <- c("inf", "reinf", "testneg")
-if(!onlyLC) {
-  for(b in c(1:3)) {
-    for(i in c(1:25)) {
-      names_final_cohorts <- rbind(names_final_cohorts,
-                                   dplyr::tibble(table_name = OverlapCohortsName,
-                                                 cohort_definition_id = 26*(b-1) + i, 
-                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+4])))
-      if(cdm[[LongCovidCohortsName]] %>% 
-         dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
-        overlap_cohorts[[26*(b-1) + i]] <- do_overlap(cdm, b, i, 26*(b-1) + i, tableName = LongCovidCohortsName)
-      }
-    }
-    names_final_cohorts <- rbind(names_final_cohorts,
-                                 dplyr::tibble(table_name = OverlapCohortsName,
-                                               cohort_definition_id = 26*(b-1) + 26, 
-                                               cohort_name =paste0(bases[b],"_lc_code")))
-    if(cdm[[LongCovidCohortsName]] %>% 
-       dplyr::filter(cohort_definition_id == 27) %>% tally() %>% pull() > 5) {
-      overlap_cohorts[[26*(b-1) + 26]] <- do_overlap(cdm, b, 27, 26*(b-1) + 26, tableName = LongCovidCohortsName)
-    }
-  }
-  overlap_cohorts <- bind_rows(overlap_cohorts)
-} else {
-  for(b in c(1:2)) {
-    for(i in c(1:25)) {
-      names_final_cohorts <- rbind(names_final_cohorts,
-                                   dplyr::tibble(table_name = OverlapCohortsName,
-                                                 cohort_definition_id = 26*(b-1) + i, 
-                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+4])))
-      if(cdm[[LongCovidCohortsName]] %>% 
-         dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
-        overlap_cohorts[[26*(b-1) + i]] <- do_overlap(cdm, b, i, 26*(b-1) + i, tableName = LongCovidCohortsName)
-      }
-    }
-    names_final_cohorts <- rbind(names_final_cohorts,
-                                 dplyr::tibble(table_name = OverlapCohortsName,
-                                               cohort_definition_id = 26*(b-1) + 26, 
-                                               cohort_name =paste0(bases[b],"_lc_code")))
-    if(cdm[[LongCovidCohortsName]] %>% 
-       dplyr::filter(cohort_definition_id == 27) %>% tally() %>% pull() > 5) {
-      overlap_cohorts[[26*(b-1) + 26]] <- do_overlap(cdm, b, 27, 26*(b-1) + 26, tableName = LongCovidCohortsName)
-    }
-  }
-  
-  overlap_cohorts <- bind_rows(overlap_cohorts)
-}
+message("Getting overlap inf cohorts")
+info(logger, '-- Getting overlap inf cohorts')
 
-# Infection/Reinfection/Test Negative + any symptom
-if(!onlyLC) {
-  for(b in c(1:3)) {
-    overlap_all_lc <- overlap_cohorts %>%
-      dplyr::filter(cohort_definition_id %in% c((26*(b-1) + 1):(26*(b-1) + 25))) %>%
-      dplyr::mutate(cohort_definition_id == 78 + b) %>%
-      dplyr::group_by(subject_id) %>%
-      dplyr::arrange(cohort_start_date) %>%
-      dplyr::filter(dplyr::row_number() == 1) %>%
-      dplyr::ungroup() %>%
-      computeQuery()
-    overlap_cohorts <- dplyr::union_all(
-      overlap_cohorts,
-      overlap_all_lc
-    )
-    names_final_cohorts <- rbind(names_final_cohorts,
-                                 dplyr::tibble(table_name = OverlapCohortsName,
-                                               cohort_definition_id = 78 + b, 
-                                               cohort_name =paste0(bases[b],"_any_lc_symptom")))
-  }
-} else {
-  for(b in c(1:2)) {
-    overlap_all_lc <- overlap_cohorts %>%
-      dplyr::filter(cohort_definition_id %in% c((26*(b-1) + 1):(26*(b-1) + 25))) %>%
-      dplyr::mutate(cohort_definition_id == 52 + b) %>%
-      dplyr::group_by(subject_id) %>%
-      dplyr::arrange(cohort_start_date) %>%
-      dplyr::filter(dplyr::row_number() == 1) %>%
-      dplyr::ungroup() %>%
-      computeQuery()
-    overlap_cohorts <- dplyr::union_all(
-      overlap_cohorts,
-      overlap_all_lc
-    )
-    names_final_cohorts <- rbind(names_final_cohorts,
-                                 dplyr::tibble(table_name = OverlapCohortsName,
-                                               cohort_definition_id = 52 + b, 
-                                               cohort_name =paste0(bases[b],"_any_lc_symptom")))
-  }
-}
+overlap_cohorts <- overlap_per_base(1, "inf", OverlapCohortsInfName)
 
 if(!onlyLC) {
-  # Infection/Reinfection/Test Negative + 1 PASC event
-  overlap_cohorts_pasc <- list()
-  for(b in c(1:3)) {
-    for(i in c(1:10)) {
-      names_final_cohorts <- rbind(names_final_cohorts,
-                                   dplyr::tibble(table_name = OverlapCohortsName,
-                                                 cohort_definition_id = 81 + 10*(b-1) + i, 
-                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+29])))
-      if(cdm[[PascCohortsName]] %>% 
-         dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
-        overlap_cohorts_pasc[[10*(b-1) + i]] <- do_overlap(cdm, b, i, 81 + 10*(b-1) + i, tableName = PascCohortsName)
-      }
-    }
-  }
-  
-  overlap_cohorts_pasc <- bind_rows(overlap_cohorts_pasc)
-  
-  # Infection/Reinfection/Test Negative + any PASC event
-  for(b in c(1:3)) {
-    overlap_all_pasc <- overlap_cohorts_pasc %>%
-      dplyr::filter(cohort_definition_id %in% c((81 + 10*(b-1) + 1):(81 + 10*(b-1) + 10))) %>%
-      dplyr::mutate(cohort_definition_id == 81 + 30 + b) %>%
-      dplyr::group_by(subject_id) %>%
-      dplyr::arrange(cohort_start_date) %>%
-      dplyr::filter(dplyr::row_number() == 1) %>%
-      dplyr::ungroup() %>%
-      computeQuery()
-    overlap_cohorts_pasc <- dplyr::union_all(
-      overlap_cohorts_pasc,
-      overlap_all_pasc
-    )
-    names_final_cohorts <- rbind(names_final_cohorts,
-                                 dplyr::tibble(table_name = OverlapCohortsName,
-                                               cohort_definition_id = 81 + 30 + b, 
-                                               cohort_name =paste0(bases[b],"_any_pasc_event")))
-  }
-  
-  # Infection/Reinfection/Test Negative + 1 Medical condition
-  overlap_cohorts_mc <- list()
-  for(b in c(1:3)) {
-    for(i in c(1:23)) {
-      names_final_cohorts <- rbind(names_final_cohorts,
-                                   dplyr::tibble(table_name = OverlapCohortsName,
-                                                 cohort_definition_id = 81 + 33 + 10*(b-1) + i, 
-                                                 cohort_name =paste0(bases[b],"_",Initial_cohorts$cohort_name[i+39])))
-      if(cdm[[MCCohortsName]] %>% 
-         dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
-        overlap_cohorts_mc[[10*(b-1) + i]] <- do_overlap(cdm, b, i, 81 + 33 + 10*(b-1) + i, tableName = MCCohortsName)
-      }
-    }
-  }
-  
-  overlap_cohorts_mc <- bind_rows(overlap_cohorts_mc)
-  
-  overlap_all <- dplyr::union_all(
-    overlap_cohorts,
-    overlap_cohorts_pasc
-  )
-  
-  overlap_all <- dplyr::union_all(
-    overlap_all,
-    overlap_cohorts_mc
-  )
+  names_final_cohorts <- rbind(names_final_cohorts,
+                               dplyr::tibble(table_name = OverlapCohortsInfName,
+                                             cohort_definition_id = c(1:48), 
+                                             cohort_name =c(paste0("inf_",Initial_cohorts$cohort_name[(5:29)]),"inf_lc_code","inf_any_lc",
+                                                            paste0("inf_",Initial_cohorts$cohort_name[(30:39)]),"inf_any_pasc",
+                                                            paste0("inf_",Initial_cohorts$cohort_name[(40:49)]))))
 } else {
-  overlap_all <- overlap_cohorts
+  names_final_cohorts <- rbind(names_final_cohorts,
+                               dplyr::tibble(table_name = OverlapCohortsInfName,
+                                             cohort_definition_id = c(1:27), 
+                                             cohort_name =c(paste0("inf_",Initial_cohorts$cohort_name[(5:29)]),"inf_lc_code","inf_any_lc")))
 }
 
 # Save attributes of the cohort
-attr(overlap_all, "cohort_set") <- names_final_cohorts %>% 
-  dplyr::filter(table_name == OverlapCohortsName) %>%
+attr(overlap_cohorts, "cohort_set") <- names_final_cohorts %>% 
+  dplyr::filter(table_name == OverlapCohortsInfName) %>%
   dplyr::select(cohort_definition_id, cohort_name) 
 
-attr(overlap_all, "cohort_count") <- getCohortCount(overlap_all)
+attr(overlap_cohorts, "cohort_count") <- getCohortCount(overlap_cohorts)
 
-cdm[[MCCohortsName]] <- newGeneratedCohortSet(
-  cohortRef = computeQuery(overlap_all, OverlapCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
-  cohortSetRef = insertTable(attr(overlap_all, "cohort_set"), cdm, paste0(OverlapCohortsName, "_set")),
-  cohortCountRef = insertTable(attr(overlap_all, "cohort_count"), cdm, paste0(OverlapCohortsName, "_count"))
+cdm[[OverlapCohortsInfName]] <- newGeneratedCohortSet(
+  cohortRef = computeQuery(overlap_cohorts, OverlapCohortsInfName, FALSE, attr(cdm, "write_schema"), TRUE),
+  cohortSetRef = insertTable(attr(overlap_cohorts, "cohort_set"), cdm, paste0(OverlapCohortsInfName, "_set")),
+  cohortCountRef = insertTable(attr(overlap_cohorts, "cohort_count"), cdm, paste0(OverlapCohortsInfName, "_count"))
 )
+
+message("Getting overlap reinf cohorts")
+info(logger, '-- Getting overlap reinf cohorts')
+
+overlap_cohorts <- overlap_per_base(2, "reinf", OverlapCohortsReinfName)
+
+if(!onlyLC) {
+  names_final_cohorts <- rbind(names_final_cohorts,
+                               dplyr::tibble(table_name = OverlapCohortsReinfName,
+                                             cohort_definition_id = c(1:48), 
+                                             cohort_name =c(paste0("reinf_",Initial_cohorts$cohort_name[(5:29)]),"reinf_lc_code","reinf_any_lc",
+                                                            paste0("reinf_",Initial_cohorts$cohort_name[(30:39)]),"reinf_any_pasc",
+                                                            paste0("reinf_",Initial_cohorts$cohort_name[(40:49)]))))
+} else {
+  names_final_cohorts <- rbind(names_final_cohorts,
+                               dplyr::tibble(table_name = OverlapCohortsReinfName,
+                                             cohort_definition_id = c(1:27), 
+                                             cohort_name =c(paste0("reinf_",Initial_cohorts$cohort_name[(5:29)]),"reinf_lc_code","reinf_any_lc")))
+}
+
+# Save attributes of the cohort
+attr(overlap_cohorts, "cohort_set") <- names_final_cohorts %>% 
+  dplyr::filter(table_name == OverlapCohortsReinfName) %>%
+  dplyr::select(cohort_definition_id, cohort_name) 
+
+attr(overlap_cohorts, "cohort_count") <- getCohortCount(overlap_cohorts)
+
+cdm[[OverlapCohortsReinfName]] <- newGeneratedCohortSet(
+  cohortRef = computeQuery(overlap_cohorts, OverlapCohortsReinfName, FALSE, attr(cdm, "write_schema"), TRUE),
+  cohortSetRef = insertTable(attr(overlap_cohorts, "cohort_set"), cdm, paste0(OverlapCohortsReinfName, "_set")),
+  cohortCountRef = insertTable(attr(overlap_cohorts, "cohort_count"), cdm, paste0(OverlapCohortsReinfName, "_count"))
+)
+
+if(!onlyLC) {
+  message("Getting overlap testneg cohorts")
+  info(logger, '-- Getting overlap testneg cohorts')
+  
+  overlap_cohorts <- overlap_per_base(3, "testneg", OverlapCohortsTestnegName)
+  
+  names_final_cohorts <- rbind(names_final_cohorts,
+                               dplyr::tibble(table_name = OverlapCohortsTestnegName,
+                                             cohort_definition_id = c(1:48), 
+                                             cohort_name =c(paste0("testneg_",Initial_cohorts$cohort_name[(5:29)]),"testneg_lc_code","testneg_any_lc",
+                                                            paste0("testneg_",Initial_cohorts$cohort_name[(30:39)]),"testneg_any_pasc",
+                                                            paste0("testneg_",Initial_cohorts$cohort_name[(40:49)]))))
+  
+  # Save attributes of the cohort
+  attr(overlap_cohorts, "cohort_set") <- names_final_cohorts %>% 
+    dplyr::filter(table_name == OverlapCohortsTestnegName) %>%
+    dplyr::select(cohort_definition_id, cohort_name) 
+  
+  attr(overlap_cohorts, "cohort_count") <- getCohortCount(overlap_cohorts)
+  
+  cdm[[OverlapCohortsTestnegName]] <- newGeneratedCohortSet(
+    cohortRef = computeQuery(overlap_cohorts, OverlapCohortsTestnegName, FALSE, attr(cdm, "write_schema"), TRUE),
+    cohortSetRef = insertTable(attr(overlap_cohorts, "cohort_set"), cdm, paste0(OverlapCohortsTestnegName, "_set")),
+    cohortCountRef = insertTable(attr(overlap_cohorts, "cohort_count"), cdm, paste0(OverlapCohortsTestnegName, "_count"))
+  )
+}
 
 if(!onlyLC) {
   cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
                     cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
-                                     PascCohortsName,MCCohortsName,OverlapCohortsName))
+                                     PascCohortsName,MCCohortsName,OverlapCohortsInfName,
+                                     OverlapCohortsReinfName, OverlapCohortsTestnegName))
 } else {
   cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
                     cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
-                                     OverlapCohortsName))
+                                     OverlapCohortsInfName, OverlapCohortsReinfName))
 }
 
 # --------------------------------------------------------------------
+
+# Change cohort_start_dates of base cohorts to 90 days after index date
+bases <- cdm[[BaseCohortsName]] %>%
+  dplyr::mutate(cohort_start_date = CDMConnector::dateadd("cohort_start_date", 90)) %>%
+  computeQuery()
+
+attr(bases, "cohort_set") <- names_final_cohorts %>% 
+  dplyr::filter(table_name == BaseCohortsName) %>%
+  dplyr::select(cohort_definition_id, cohort_name) 
+
+attr(bases, "cohort_count") <- getCohortCount(bases)
+
+cdm[[BaseCohortsName]] <- newGeneratedCohortSet(
+  cohortRef = computeQuery(bases, BaseCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
+  cohortSetRef = insertTable(attr(bases, "cohort_set"), cdm, paste0(BaseCohortsName, "_set")),
+  cohortCountRef = insertTable(attr(bases, "cohort_count"), cdm, paste0(BaseCohortsName, "_count"))
+)
+
+# ----------------------------------------------------------------------
 # Print counts of all cohorts (if >5) 
+
+message("Getting cohort counts")
+info(logger, '-- Getting cohort counts')
 
 finalCounts <- tibble::tibble(cohort_name = "start", n = 0)
 
@@ -422,15 +371,15 @@ for(name in CohortNames) {
   if(name %in% names(cdm)) {
     finalCounts <- finalCounts %>%
       dplyr::union(cdm[[name]] %>% 
-      dplyr::group_by(cohort_definition_id) %>% 
-      tally() %>% 
-      collect() %>% 
-      right_join(names_final_cohorts %>% dplyr::filter(table_name == name), 
-                 by = c("cohort_definition_id")) %>% 
-      dplyr::mutate(n = as.numeric(n)) %>% 
-      dplyr::mutate(n = if_else(is.na(n), 0, n)) %>%
-      dplyr::mutate(n = ifelse(n <= 5, NA, n)) %>% 
-      dplyr::select(cohort_name, n))
+                     dplyr::group_by(cohort_definition_id) %>% 
+                     tally() %>% 
+                     collect() %>% 
+                     right_join(names_final_cohorts %>% dplyr::filter(table_name == name), 
+                                by = c("cohort_definition_id")) %>% 
+                     dplyr::mutate(n = as.numeric(n)) %>% 
+                     dplyr::mutate(n = if_else(is.na(n), 0, n)) %>%
+                     dplyr::mutate(n = ifelse(n <= 5, NA, n)) %>% 
+                     dplyr::select(cohort_name, n))
   }
 }
 
@@ -439,7 +388,7 @@ finalCounts <- finalCounts[-1,]
 # Export csv
 write_csv(finalCounts,
           file = file.path(tempDir,
-            paste0(db.name,"_finalcounts.csv")
+                           paste0(db.name,"_finalcounts.csv")
           )
 )
 

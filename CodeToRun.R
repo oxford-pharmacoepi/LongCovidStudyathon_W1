@@ -20,6 +20,7 @@ library(zip)
 library(ggplot2)
 library(IncidencePrevalence)
 library(tibble)
+library(PatientProfiles)
 
 # install the following packages like this, with remotes 
 # remotes::install_github("OHDSI/CirceR")
