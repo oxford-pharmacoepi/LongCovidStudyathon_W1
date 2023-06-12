@@ -41,6 +41,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   completeDatabaseIntervals = FALSE, minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Inf_AllandSex.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Inf_AllandSex_attrition.csv")))
 
 message("- Age strata")
@@ -60,6 +63,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Inf_Age.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Inf_Age_attrition.csv")))
 
 
@@ -82,6 +88,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   completeDatabaseIntervals = FALSE, minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Reinf_AllandSex.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Reinf_AllandSex_attrition.csv")))
 
 message("- Age strata")
@@ -101,6 +110,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Reinf_Age.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Reinf_Age_attrition.csv")))
 
 
@@ -124,6 +136,9 @@ if(!onlyLC) {
     completeDatabaseIntervals = FALSE, minCellCount = 5)
   
   write.csv(inc, file = here::here(output_ip, paste0("Testneg_AllandSex.csv")))
+  
+  attr(inc, "attrition") <- attr(inc, "attrition") %>%
+    dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
   write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Testneg_AllandSex_attrition.csv")))
   
   message("- Age strata")
@@ -143,6 +158,9 @@ if(!onlyLC) {
     minCellCount = 5)
   
   write.csv(inc, file = here::here(output_ip, paste0("Testneg_Age.csv")))
+  
+  attr(inc, "attrition") <- attr(inc, "attrition") %>%
+    dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
   write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Testneg_Age_attrition.csv")))
 }
 
@@ -166,6 +184,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_LC_AllandSex.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_LC_AllandSex_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -175,6 +196,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_Pasc_AllandSex.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_Pasc_AllandSex_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -184,6 +208,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_MC_AllandSex.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_MC_AllandSex_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -193,6 +220,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_inf_AllandSex.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_inf_AllandSex_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -202,6 +232,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_reinf_AllandSex.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_reinf_AllandSex_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -211,6 +244,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_testneg_AllandSex.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_testneg_AllandSex_attrition.csv")))
 
 
@@ -228,6 +264,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_LC_Age.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_LC_Age_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -237,6 +276,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_Pasc_Age.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_Pasc_Age_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -246,6 +288,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_MC_Age.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_MC_Age_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -255,6 +300,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_inf_Age.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_inf_Age_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -264,6 +312,9 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_reinf_Age.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_reinf_Age_attrition.csv")))
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -273,5 +324,8 @@ inc <- IncidencePrevalence::estimateIncidence(
   minCellCount = 5)
 
 write.csv(inc, file = here::here(output_ip, paste0("Allpop_testneg_Age.csv")))
+
+attr(inc, "attrition") <- attr(inc, "attrition") %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_testneg_Age_attrition.csv")))
 
