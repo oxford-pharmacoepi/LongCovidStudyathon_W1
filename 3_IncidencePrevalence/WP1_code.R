@@ -53,7 +53,7 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   strataTable = BaseCohortsName,
   strataCohortId = 1,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,120))
+  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
 )
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -100,7 +100,7 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   strataTable = BaseCohortsName,
   strataCohortId = 2,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,120))
+  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
 )
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -148,7 +148,7 @@ if(!onlyLC) {
     strataTable = BaseCohortsName,
     strataCohortId = 3,
     cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-    ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,120))
+    ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
   )
   
   inc <- IncidencePrevalence::estimateIncidence(
@@ -255,7 +255,7 @@ message("- Age strata")
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,120))
+  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
 )
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = LongCovidCohortsName, 
