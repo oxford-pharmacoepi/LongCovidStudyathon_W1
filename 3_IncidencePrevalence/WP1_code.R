@@ -177,6 +177,12 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   sex = c("Male", "Female", "Both")
 )
 
+cdm$denominator <- cdm$denominator %>%
+  PatientProfiles::addPriorHistory(cdm) %>%
+  dplyr::filter(prior_history > 365) %>%
+  dplyr::select(- "prior_history") %>%
+  computeQuery()
+
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = LongCovidCohortsName, 
   interval = c("years","months","overall"),
@@ -257,6 +263,13 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
   ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
 )
+
+cdm$denominator <- cdm$denominator %>%
+  PatientProfiles::addPriorHistory(cdm) %>%
+  dplyr::filter(prior_history > 365) %>%
+  dplyr::select(- "prior_history") %>%
+  computeQuery()
+
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = LongCovidCohortsName, 
   interval = c("years","months","overall"),
@@ -328,4 +341,37 @@ write.csv(inc, file = here::here(output_ip, paste0("Allpop_testneg_Age.csv")))
 attr(inc, "attrition") <- attr(inc, "attrition") %>%
   dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_testneg_Age_attrition.csv")))
+
+
+# Get information of the base cohorts for Table One
+bases <- cdm[[BaseCohortsName]] %>%
+  PatientProfiles::addDemographics(cdm) %>%
+  dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
+  dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
+  dplyr::collect()
+
+result <- PatientProfiles::summariseResult(bases, strata = list("base_id" = "cohort_definition_id"))
+
+write.csv(result, file = here::here(tempDir, "tableOne_bases.csv"))
+
+cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+  cdm =  cdm,
+  cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability))
+)
+
+cdm$denominator <- cdm$denominator %>%
+  PatientProfiles::addPriorHistory(cdm) %>%
+  dplyr::filter(prior_history > 365) %>%
+  dplyr::select(- "prior_history") %>%
+  computeQuery()
+
+allpop <- cdm$denominator %>%
+  PatientProfiles::addDemographics(cdm) %>%
+  dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
+  dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
+  dplyr::collect()
+  
+result2 <- PatientProfiles::summariseResult(allpop)
+
+write.csv(result2, file = here::here(tempDir, "tableOne_allpop.csv"))
 
