@@ -1,7 +1,7 @@
 # Long Covid and PASC Studyathon - Study package
                                                                                       
 ## Package overview
-This package contains all the required code to run the third package 
+This package contains all the required code to run the first package 
 for the study on Long Covid and PASC taking place in Oxford, April 2023.
 
 ## Package extraction
