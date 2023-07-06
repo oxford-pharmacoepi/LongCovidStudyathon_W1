@@ -173,7 +173,8 @@ create_outcome <- function(cdm, window, new_ids) {
 
 create_any_cohort <- function(cdm, window, cohort_id, tableold, name) {
   cohorts <- tableold %>%
-    dplyr::filter(cohort_definition_id %in% window)
+    dplyr::filter(cohort_definition_id %in% window) %>%
+    computeQuery()
   
   attrition <- dplyr::tibble(
     number_observations = cohorts %>% dplyr::tally() %>% dplyr::pull(),
@@ -200,11 +201,11 @@ do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id
   bases <- c("inf", "reinf", "testneg")
   base <- cdm[[BaseCohortsName]] %>% 
     dplyr::filter(cohort_definition_id == base_cohort_id) %>%
-    compute()
+    computeQuery()
   
   outcome <- cdm[[tableName]] %>% 
     dplyr::filter(cohort_definition_id == outcome_cohort_id) %>%
-    compute()
+    computeQuery()
   
   overlap <- base %>% 
     dplyr::inner_join(
@@ -212,7 +213,8 @@ do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id
         dplyr::select(subject_id, outcome_date = cohort_start_date, 
                       outcome_end = cohort_end_date),
       by = "subject_id"
-    ) %>% distinct() %>% compute()
+    ) %>% distinct() %>%
+    computeQuery()
   
   attrition <- dplyr::tibble(
     number_observations = overlap %>% dplyr::tally() %>% dplyr::pull(),
@@ -223,8 +225,8 @@ do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id
     dplyr::mutate(cohort_definition_id = overlap_cohort_id) %>%
     dplyr::mutate(time_diff = !!CDMConnector::datediff("outcome_date","cohort_start_date")) %>%
     dplyr::filter(time_diff < -90 & time_diff > -366) %>%
-    dplyr::select(-time_diff) %>% 
-    compute()
+    dplyr::select(-time_diff) %>%
+    computeQuery()
   
   attrition <- rbind(attrition, 
                      dplyr::tibble(number_observations = overlap %>% dplyr::tally()
@@ -234,12 +236,14 @@ do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id
     addCohortIntersectFlag(
       cdm, targetCohortTable = tableName, targetCohortId = outcome_cohort_id, 
       window = list(c(-180,-1)), nameStyle = "event") %>%
-    compute()
+    computeQuery()
+  
   if("event" %in% colnames(overlap)) {
     overlap <- overlap %>% 
       dplyr::filter(event == 0) %>% 
-      dplyr::select(-c(event)) %>% 
-      compute()
+      dplyr::select(-c(event)) %>%
+      computeQuery()
+    
   }
   attrition <- rbind(attrition, 
                      dplyr::tibble(number_observations = overlap %>% dplyr::tally()
@@ -250,7 +254,7 @@ do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id
     dplyr::rename("cohort_start_date" = "outcome_date") %>% 
     dplyr::rename("cohort_end_date" = "outcome_end") %>%
     distinct() %>%
-    compute()
+    computeQuery()
   
   write_csv(
     attrition,

@@ -10,7 +10,7 @@ observation_death <- cdm$observation_period %>%
   left_join(cdm$death %>% dplyr::select("subject_id" = "person_id", "death_date"),
             by = "subject_id") %>%
   mutate(death = ifelse(!(is.na(death_date)), 1,0)) %>%
-  compute()
+  computeQuery()
 
 # Output folder for Attrition
 output_at <- file.path(tempDir,"Attrition")
@@ -51,44 +51,56 @@ if(!onlyLC && negative_init %>% dplyr::tally() %>% dplyr::pull() != 0) {
 new_infection <- covid[[1]]
 new_infection <- new_infection %>% dplyr::mutate(cohort_definition_id = 1) %>%
   dplyr::select(subject_id,cohort_definition_id,cohort_start_date,cohort_end_date) %>%
-  compute()
+  computeQuery()
+
 
 # Reinfection
 reinfection <- covid[[2]]
 reinfection <- reinfection %>% dplyr::mutate(cohort_definition_id = 2) %>%
   dplyr::select(subject_id,cohort_definition_id,cohort_start_date,cohort_end_date) %>%
-  compute()
+  computeQuery()
+
 
 # Attritions
 attrition_positive <- covid[[3]]
 attrition_positive <- attrition_positive %>% dplyr::mutate(cohort_definition_id = 1) %>%
-  compute()
+  computeQuery()
+
 
 # Attritions for the censoring sub-part
 attrition_censor_positive <- covid[[4]]
 attrition_censor_positive <- attrition_censor_positive %>% dplyr::mutate(cohort_definition_id = 1) %>%
-  compute()
+  computeQuery()
+
 
 if(!onlyLC && negative_init %>% dplyr::tally() %>% dplyr::pull() != 0) {
   # Tested negative "final"
   negativetest <- nocovid[[1]]
   negativetest <- negativetest %>% dplyr::mutate(cohort_definition_id = 3) %>%
     dplyr::select(subject_id,cohort_definition_id,cohort_start_date,cohort_end_date) %>%
-    compute()
+    computeQuery()
+  
   attrition_negative <- nocovid[[3]]
   attrition_negative <- attrition_negative %>% dplyr::mutate(cohort_definition_id = 3) %>%
-    compute()
+    computeQuery()
+  
   attrition_censor_negative <- nocovid[[4]]
   attrition_censor_negative <- attrition_censor_negative %>% dplyr::mutate(cohort_definition_id = 3) %>%
-    compute()
+    computeQuery()
+  
   attrition <- rbind(attrition_positive,attrition_negative)
   attrition_censor <- rbind(attrition_censor_positive,attrition_censor_negative)
-  bases <- dplyr::union_all(new_infection, reinfection)
-  bases <- dplyr::union_all(bases, negativetest)
+  bases <- dplyr::union_all(new_infection, reinfection) %>%
+    computeQuery()
+  bases <- dplyr::union_all(bases, negativetest) %>%
+    computeQuery()
+  
 } else {
   attrition <-attrition_positive
   attrition_censor <-attrition_censor_positive
-  bases <- dplyr::union_all(new_infection, reinfection)
+  bases <- dplyr::union_all(new_infection, reinfection) %>%
+    computeQuery()
+  
 }
 
 write_csv(
@@ -154,7 +166,9 @@ names_final_cohorts <- rbind(names_final_cohorts,
                              dplyr::tibble(table_name = LongCovidCohortsName,
                                            cohort_definition_id = 27, cohort_name = "lc_code"))
 
-lc_final <- dplyr::union_all(table_lc, table_lccode)
+lc_final <- dplyr::union_all(table_lc, table_lccode) %>%
+  computeQuery()
+
 
 # Save attributes of the cohort
 attr(lc_final, "cohort_set") <- names_final_cohorts %>% 
