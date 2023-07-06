@@ -288,7 +288,7 @@ overlap_per_base <- function(base_id, base_name, base_table) {
      dplyr::filter(cohort_definition_id == 27) %>% tally() %>% pull() > 5) {
     overlap_cohorts <- dplyr::union_all(
       overlap_cohorts,
-      do_overlap(cdm, b, 27, 26, tableName = LongCovidCohortsName)
+      do_overlap(cdm, base_id, 27, 26, tableName = LongCovidCohortsName)
     ) %>%
       computeQuery()
   }
@@ -355,5 +355,4 @@ overlap_per_base <- function(base_id, base_name, base_table) {
   return(overlap_cohorts)
   
 }
-
 

@@ -70,12 +70,10 @@ if(doIncidencePrevalence) {
   info(logger, 'GOT INCIDENCE AND PREVALENCE')
 }
 
+info(logger, 'SAVED RESULTS IN THE OUTPUT FOLDER')
+
 zip::zip(zipfile = paste0(zipName, ".zip"),
          files = list.files(tempDir, full.names = TRUE))
-if (tempDirCreated) {
-  unlink(tempDir, recursive = TRUE)
-}
-info(logger, 'SAVED RESULTS IN THE OUTPUT FOLDER')
 
 print("Done!")
 print("If all has worked, there should now be a zip file with your results
@@ -83,3 +81,7 @@ print("If all has worked, there should now be a zip file with your results
 print("Thank you for running the study!")
 Sys.time() - start
 readLines(log_file)
+
+if (tempDirCreated) {
+  unlink(tempDir, recursive = TRUE)
+}

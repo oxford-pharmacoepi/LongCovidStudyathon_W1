@@ -167,21 +167,16 @@ if(!onlyLC) {
 # ----------------------------------------------------------------
 # 1b: LC on source population
 
-info(logger, '-- Calculating incidence and prevalence for outcomes and base cohorts in source population')
+info(logger, '-- Calculating incidence and prevalence for outcomes and base cohorts in source population, sex strata')
 
 message("- No strata and sex strata")
 # No strata and sex strata
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
+  daysPriorHistory = 365,
   sex = c("Male", "Female", "Both")
 )
-
-cdm$denominator <- cdm$denominator %>%
-  PatientProfiles::addPriorHistory(cdm) %>%
-  dplyr::filter(prior_history > 365) %>%
-  dplyr::select(- "prior_history") %>%
-  computeQuery()
 
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = LongCovidCohortsName, 
@@ -255,6 +250,7 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
   dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_testneg_AllandSex_attrition.csv")))
 
+info(logger, '-- Calculating incidence and prevalence for outcomes and base cohorts in source population, age strata')
 
 message("- Age strata")
 # Age strata
@@ -342,6 +338,7 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
   dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_testneg_Age_attrition.csv")))
 
+info(logger, '-- Getting information of base cohorts for Table One')
 
 # Get information of the base cohorts for Table One
 bases <- cdm[[BaseCohortsName]] %>%
