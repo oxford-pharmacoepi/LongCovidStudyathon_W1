@@ -270,7 +270,9 @@ overlap_per_base <- function(base_id, base_name, base_table) {
   
   # Infection + 1 LC symptom / LC code, any symptom, 1 PASC event, any PASC, 1 MC
   overlap_cohorts <- cdm[[BaseCohortsName]] %>%
-    dplyr::filter(dplyr::row_number() == 1) %>%
+    dplyr::mutate(seq = row_number()) %>%
+    dplyr::filter(seq == 1) %>%
+    dplyr::select(-seq) %>%
     computeQuery()
   
   for(i in c(1:25)) {
@@ -298,7 +300,9 @@ overlap_per_base <- function(base_id, base_name, base_table) {
     dplyr::mutate(cohort_definition_id = 27) %>%
     dplyr::group_by(subject_id) %>%
     dbplyr::window_order(cohort_start_date) %>%
-    dplyr::filter(dplyr::row_number() == 1) %>%
+    dplyr::mutate(seq = row_number()) %>%
+    dplyr::filter(seq == 1) %>%
+    dplyr::select(-seq) %>%
     dplyr::ungroup() %>%
     computeQuery()
   
@@ -329,7 +333,9 @@ overlap_per_base <- function(base_id, base_name, base_table) {
     dplyr::mutate(cohort_definition_id = 38) %>%
     dplyr::group_by(subject_id) %>%
     dbplyr::window_order(cohort_start_date) %>%
-    dplyr::filter(dplyr::row_number() == 1) %>%
+    dplyr::mutate(seq = row_number()) %>%
+    dplyr::filter(seq == 1) %>%
+    dplyr::select(-seq) %>%
     dplyr::ungroup() %>%
     computeQuery()
   overlap_cohorts <- dplyr::union_all(
