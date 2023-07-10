@@ -160,7 +160,7 @@ create_outcome <- function(cdm, window, new_ids) {
       currenttable <- dplyr::union_all(currenttable, current) %>% computeQuery()
     }
     
-    write_csv(
+    write.csv(
       attrition,
       file = here::here(output_at, paste0("attrition_",Initial_cohorts$cohort_name[i],".csv"))
     )
@@ -189,7 +189,7 @@ create_any_cohort <- function(cdm, window, cohort_id, tableold, name) {
   tableold <- dplyr::union_all(tableold,any_cohort) %>% 
     computeQuery()
   
-  write_csv(
+  write.csv(
     attrition,
     file = here::here(output_at, paste0("attrition_any_",name,".csv"))
   )
@@ -256,7 +256,7 @@ do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id
     distinct() %>%
     computeQuery()
   
-  write_csv(
+  write.csv(
     attrition,
     file = here::here(output_at, paste0("attrition_",bases[base_cohort_id],"_",Initial_cohorts$cohort_name[outcome_cohort_id + 4],".csv"))
   )
