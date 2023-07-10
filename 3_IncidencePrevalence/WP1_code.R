@@ -190,29 +190,31 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
   dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_LC_AllandSex_attrition.csv")))
 
-inc <- IncidencePrevalence::estimateIncidence(
-  cdm = cdm, denominatorTable = "denominator", outcomeTable = PascCohortsName, 
-  interval = c("years","months","overall"),
-  completeDatabaseIntervals = FALSE,  
-  minCellCount = 5)
-
-write.csv(inc, file = here::here(output_ip, paste0("Allpop_Pasc_AllandSex.csv")))
-
-attr(inc, "attrition") <- attr(inc, "attrition") %>%
-  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
-write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_Pasc_AllandSex_attrition.csv")))
-
-inc <- IncidencePrevalence::estimateIncidence(
-  cdm = cdm, denominatorTable = "denominator", outcomeTable = MCCohortsName, 
-  interval = c("years","months","overall"),
-  completeDatabaseIntervals = FALSE,  
-  minCellCount = 5)
-
-write.csv(inc, file = here::here(output_ip, paste0("Allpop_MC_AllandSex.csv")))
-
-attr(inc, "attrition") <- attr(inc, "attrition") %>%
-  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
-write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_MC_AllandSex_attrition.csv")))
+if(!onlyLC) {
+  inc <- IncidencePrevalence::estimateIncidence(
+    cdm = cdm, denominatorTable = "denominator", outcomeTable = PascCohortsName, 
+    interval = c("years","months","overall"),
+    completeDatabaseIntervals = FALSE,  
+    minCellCount = 5)
+  
+  write.csv(inc, file = here::here(output_ip, paste0("Allpop_Pasc_AllandSex.csv")))
+  
+  attr(inc, "attrition") <- attr(inc, "attrition") %>%
+    dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
+  write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_Pasc_AllandSex_attrition.csv")))
+  
+  inc <- IncidencePrevalence::estimateIncidence(
+    cdm = cdm, denominatorTable = "denominator", outcomeTable = MCCohortsName, 
+    interval = c("years","months","overall"),
+    completeDatabaseIntervals = FALSE,  
+    minCellCount = 5)
+  
+  write.csv(inc, file = here::here(output_ip, paste0("Allpop_MC_AllandSex.csv")))
+  
+  attr(inc, "attrition") <- attr(inc, "attrition") %>%
+    dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
+  write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_MC_AllandSex_attrition.csv")))
+}
 
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsInfName, 
@@ -238,17 +240,19 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
   dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_reinf_AllandSex_attrition.csv")))
 
-inc <- IncidencePrevalence::estimateIncidence(
-  cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsTestneg_Name, 
-  interval = c("years","months","overall"),
-  completeDatabaseIntervals = FALSE,  
-  minCellCount = 5)
-
-write.csv(inc, file = here::here(output_ip, paste0("Allpop_testneg_AllandSex.csv")))
-
-attr(inc, "attrition") <- attr(inc, "attrition") %>%
-  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
-write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_testneg_AllandSex_attrition.csv")))
+if(!onlyLC) {
+  inc <- IncidencePrevalence::estimateIncidence(
+    cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsTestneg_Name, 
+    interval = c("years","months","overall"),
+    completeDatabaseIntervals = FALSE,  
+    minCellCount = 5)
+  
+  write.csv(inc, file = here::here(output_ip, paste0("Allpop_testneg_AllandSex.csv")))
+  
+  attr(inc, "attrition") <- attr(inc, "attrition") %>%
+    dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
+  write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_testneg_AllandSex_attrition.csv")))
+}
 
 info(logger, '-- Calculating incidence and prevalence for outcomes and base cohorts in source population, age strata')
 
@@ -278,29 +282,31 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
   dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_LC_Age_attrition.csv")))
 
-inc <- IncidencePrevalence::estimateIncidence(
-  cdm = cdm, denominatorTable = "denominator", outcomeTable = PascCohortsName, 
-  interval = c("years","months","overall"),
-  completeDatabaseIntervals = FALSE,  
-  minCellCount = 5)
-
-write.csv(inc, file = here::here(output_ip, paste0("Allpop_Pasc_Age.csv")))
-
-attr(inc, "attrition") <- attr(inc, "attrition") %>%
-  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
-write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_Pasc_Age_attrition.csv")))
-
-inc <- IncidencePrevalence::estimateIncidence(
-  cdm = cdm, denominatorTable = "denominator", outcomeTable = MCCohortsName, 
-  interval = c("years","months","overall"),
-  completeDatabaseIntervals = FALSE,  
-  minCellCount = 5)
-
-write.csv(inc, file = here::here(output_ip, paste0("Allpop_MC_Age.csv")))
-
-attr(inc, "attrition") <- attr(inc, "attrition") %>%
-  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
-write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_MC_Age_attrition.csv")))
+if(!onlyLC) {
+  inc <- IncidencePrevalence::estimateIncidence(
+    cdm = cdm, denominatorTable = "denominator", outcomeTable = PascCohortsName, 
+    interval = c("years","months","overall"),
+    completeDatabaseIntervals = FALSE,  
+    minCellCount = 5)
+  
+  write.csv(inc, file = here::here(output_ip, paste0("Allpop_Pasc_Age.csv")))
+  
+  attr(inc, "attrition") <- attr(inc, "attrition") %>%
+    dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
+  write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_Pasc_Age_attrition.csv")))
+  
+  inc <- IncidencePrevalence::estimateIncidence(
+    cdm = cdm, denominatorTable = "denominator", outcomeTable = MCCohortsName, 
+    interval = c("years","months","overall"),
+    completeDatabaseIntervals = FALSE,  
+    minCellCount = 5)
+  
+  write.csv(inc, file = here::here(output_ip, paste0("Allpop_MC_Age.csv")))
+  
+  attr(inc, "attrition") <- attr(inc, "attrition") %>%
+    dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
+  write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_MC_Age_attrition.csv")))
+}
 
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsInfName, 
@@ -326,17 +332,19 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
   dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_reinf_Age_attrition.csv")))
 
-inc <- IncidencePrevalence::estimateIncidence(
-  cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsTestnegName, 
-  interval = c("years","months","overall"),
-  completeDatabaseIntervals = FALSE,  
-  minCellCount = 5)
-
-write.csv(inc, file = here::here(output_ip, paste0("Allpop_testneg_Age.csv")))
-
-attr(inc, "attrition") <- attr(inc, "attrition") %>%
-  dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
-write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_testneg_Age_attrition.csv")))
+if(!onlyLC)  {
+  inc <- IncidencePrevalence::estimateIncidence(
+    cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsTestnegName, 
+    interval = c("years","months","overall"),
+    completeDatabaseIntervals = FALSE,  
+    minCellCount = 5)
+  
+  write.csv(inc, file = here::here(output_ip, paste0("Allpop_testneg_Age.csv")))
+  
+  attr(inc, "attrition") <- attr(inc, "attrition") %>%
+    dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
+  write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_testneg_Age_attrition.csv")))
+}
 
 info(logger, '-- Getting information of base cohorts for Table One')
 

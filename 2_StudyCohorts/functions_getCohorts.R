@@ -324,7 +324,6 @@ overlap_per_base <- function(base_id, base_name, base_table) {
           computeQuery()
       }
     }
-  }
   
   overlap_all_pasc <- overlap_cohorts %>%
     dplyr::filter(cohort_definition_id %in% c(28:37)) %>%
@@ -355,6 +354,8 @@ overlap_per_base <- function(base_id, base_name, base_table) {
         computeQuery()
     }
   }
+  
+}
   
   return(overlap_cohorts)
   
