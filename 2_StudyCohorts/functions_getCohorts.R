@@ -269,11 +269,9 @@ overlap_per_base <- function(base_id, base_name, base_table) {
   info(logger, '--- Getting overlap lc cohorts')
   
   # Infection + 1 LC symptom / LC code, any symptom, 1 PASC event, any PASC, 1 MC
-  overlap_cohorts <- cdm[[BaseCohortsName]] %>%
-    dplyr::slice(1) %>%
-    computeQuery()
+  overlap_cohorts <- do_overlap(cdm, base_id, 1, 1, tableName = LongCovidCohortsName)
   
-  for(i in c(1:25)) {
+  for(i in c(2:25)) {
     if(cdm[[LongCovidCohortsName]] %>% 
        dplyr::filter(cohort_definition_id == i) %>% tally() %>% pull() > 5) {
       overlap_cohorts <- dplyr::union_all(

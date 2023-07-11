@@ -103,11 +103,11 @@ if(!onlyLC && negative_init %>% dplyr::tally() %>% dplyr::pull() != 0) {
   
 }
 
-write_csv(
+write.csv(
   attrition,
   file = here::here(output_at, "attrition_base.csv")
 )
-write_csv(
+write.csv(
   attrition_censor,
   file = here::here(output_at, "attrition_base_censoring.csv")
 )
@@ -400,13 +400,13 @@ for(name in CohortNames) {
 finalCounts <- finalCounts[-1,]
 
 # Export csv
-write_csv(finalCounts,
+write.csv(finalCounts,
           file = file.path(tempDir,
                            paste0(db.name,"_finalcounts.csv")
           )
 )
 
-write_csv(names_final_cohorts,
+write.csv(names_final_cohorts,
           file = file.path(tempDir,
                            paste0(db.name,"_cohorts.csv")
           )
