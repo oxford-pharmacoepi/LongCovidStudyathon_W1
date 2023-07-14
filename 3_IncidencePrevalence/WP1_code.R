@@ -242,7 +242,7 @@ write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_re
 
 if(!onlyLC) {
   inc <- IncidencePrevalence::estimateIncidence(
-    cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsTestneg_Name, 
+    cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsTestnegName, 
     interval = c("years","months","overall"),
     completeDatabaseIntervals = FALSE,  
     minCellCount = 5)
