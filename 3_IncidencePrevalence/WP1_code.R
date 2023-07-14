@@ -345,12 +345,21 @@ info(logger, '-- Getting information of base cohorts for Table One')
 
 # Get information of the base cohorts for Table One
 bases <- cdm[[BaseCohortsName]] %>%
-  PatientProfiles::addDemographics(cdm) %>%
+  dplyr::mutate(cohort_start_date = CDMConnector::dateadd("cohort_start_date", -90)) %>%
   dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
   dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
+  PatientProfiles::addDemographics(cdm) %>%
   dplyr::collect()
 
-result <- PatientProfiles::summariseResult(bases, strata = list("base_id" = "cohort_definition_id"))
+result <- PatientProfiles::summariseResult(
+  bases, 
+  strata = list("base_id" = "cohort_definition_id"),
+  functions = list(
+    numericVariables = c("mean","median", "q25", "q75","sd", "iqr","min","max"),
+    dateVariables = c("mean","median", "q25", "q75","min","max"),
+    binaryVariables = c("count", "%"),
+    categoricalVariables = c("count", "%")
+  ))
 
 write.csv(result, file = here::here(tempDir, "tableOne_bases.csv"))
 
