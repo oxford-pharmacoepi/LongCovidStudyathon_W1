@@ -261,14 +261,9 @@ message("- Age strata")
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
+  daysPriorHistory = 365,
   ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
 )
-
-cdm$denominator <- cdm$denominator %>%
-  PatientProfiles::addPriorHistory(cdm) %>%
-  dplyr::filter(prior_history > 365) %>%
-  dplyr::select(- "prior_history") %>%
-  computeQuery()
 
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = LongCovidCohortsName, 
@@ -361,14 +356,9 @@ write.csv(result, file = here::here(tempDir, "tableOne_bases.csv"))
 
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
+  daysPriorHistory = 365,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability))
 )
-
-cdm$denominator <- cdm$denominator %>%
-  PatientProfiles::addPriorHistory(cdm) %>%
-  dplyr::filter(prior_history > 365) %>%
-  dplyr::select(- "prior_history") %>%
-  computeQuery()
 
 allpop <- cdm$denominator %>%
   PatientProfiles::addDemographics(cdm) %>%
