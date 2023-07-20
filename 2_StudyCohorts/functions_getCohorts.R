@@ -65,7 +65,7 @@ do_exclusion <- function(cdm, cohort, id, S_start_date) {
     computeQuery()
   # censor on observation_end, death, study end date, or covid (re)infection
   cohort <- cohort %>% dplyr::mutate(one_year_date = 
-                                       lubridate::as_date(.data$cohort_start_date + lubridate::days(365))) %>%
+                                       CDMConnector::dateadd("cohort_start_date", 365)) %>%
     dplyr::mutate(end_covid_testing_date =  as.Date(.env$covid_end_date)) %>% # asked in the CodeToRun file
     dplyr::left_join(observation_death, by = c("subject_id")) %>%
     computeQuery()

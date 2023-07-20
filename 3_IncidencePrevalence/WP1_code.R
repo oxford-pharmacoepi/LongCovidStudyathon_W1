@@ -349,6 +349,7 @@ bases <- cdm[[BaseCohortsName]] %>%
   dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
   dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
   PatientProfiles::addDemographics(cdm) %>%
+  dplyr::relocate("sex", .after = last_col()) %>%
   dplyr::collect()
 
 result <- PatientProfiles::summariseResult(
@@ -373,6 +374,7 @@ allpop <- cdm$denominator %>%
   PatientProfiles::addDemographics(cdm) %>%
   dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
   dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
+  dplyr::relocate("sex", .after = last_col()) %>%
   dplyr::collect()
   
 result2 <- PatientProfiles::summariseResult(allpop)
