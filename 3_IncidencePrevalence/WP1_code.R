@@ -344,13 +344,24 @@ if(!onlyLC)  {
 info(logger, '-- Getting information of base cohorts for Table One')
 
 # Get information of the base cohorts for Table One
-bases <- cdm[[BaseCohortsName]] %>%
-  dplyr::mutate(cohort_start_date = CDMConnector::dateadd("cohort_start_date", -90)) %>%
-  dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
-  dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
-  PatientProfiles::addDemographics(cdm) %>%
-  dplyr::relocate("sex", .after = last_col()) %>%
-  dplyr::collect()
+if(sql_dem) {
+  bases <- cdm[[BaseCohortsName]] %>%
+    dplyr::mutate(cohort_start_date = CDMConnector::dateadd("cohort_start_date", -90)) %>%
+    dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
+    dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
+    PatientProfiles::addDemographics_sql(cdm) %>%
+    dplyr::relocate("sex", .after = last_col()) %>%
+    dplyr::collect()
+} else {
+  bases <- cdm[[BaseCohortsName]] %>%
+    dplyr::mutate(cohort_start_date = CDMConnector::dateadd("cohort_start_date", -90)) %>%
+    dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
+    dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
+    PatientProfiles::addDemographics(cdm) %>%
+    dplyr::relocate("sex", .after = last_col()) %>%
+    dplyr::collect()
+}
+
 
 result <- PatientProfiles::summariseResult(
   bases, 
@@ -370,12 +381,21 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability))
 )
 
-allpop <- cdm$denominator %>%
-  PatientProfiles::addDemographics(cdm) %>%
-  dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
-  dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
-  dplyr::relocate("sex", .after = last_col()) %>%
-  dplyr::collect()
+if(sql_dem) {
+  allpop <- cdm$denominator %>%
+    PatientProfiles::addDemographics_sql(cdm) %>%
+    dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
+    dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
+    dplyr::relocate("sex", .after = last_col()) %>%
+    dplyr::collect()
+} else {
+  allpop <- cdm$denominator %>%
+    PatientProfiles::addDemographics(cdm) %>%
+    dplyr::mutate(cohort_start_date = as.Date(cohort_start_date)) %>%
+    dplyr::mutate(cohort_end_date = as.Date(cohort_end_date)) %>%
+    dplyr::relocate("sex", .after = last_col()) %>%
+    dplyr::collect()
+}
   
 result2 <- PatientProfiles::summariseResult(allpop)
 
