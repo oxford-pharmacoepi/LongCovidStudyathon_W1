@@ -76,6 +76,9 @@ doIncidencePrevalence <- TRUE
 # If you can only run Long Covid related analyses
 onlyLC <- FALSE
 
+# If you have problems with addDemographics
+sql_dem <- FALSE
+
 # Run the study
 source(here("RunStudy.R"))
 
