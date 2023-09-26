@@ -296,3 +296,29 @@ futureObservationQuery <- function(indexDate, name) {
            rlang::parse_exprs() %>%
            rlang::set_names(glue::glue(name)))
 }
+
+addPriorObservation_sql <- function(x,
+                                cdm = attr(x, "cdm_reference"),
+                                indexDate = "cohort_start_date",
+                                priorObservationName = "prior_observation") {
+  x <- x %>%
+    addDemographics_sql(
+      cdm = cdm,
+      indexDate = indexDate,
+      age = FALSE,
+      ageGroup = NULL,
+      ageDefaultDay = NULL,
+      ageDefaultMonth = NULL,
+      ageImposeDay = FALSE,
+      ageImposeMonth = FALSE,
+      sex = FALSE,
+      priorObservation = TRUE,
+      priorObservationName = priorObservationName,
+      futureObservation = FALSE,
+      ageName = NULL,
+      sexName = NULL,
+      futureObservationName = NULL
+    )
+  
+  return(x)
+}
