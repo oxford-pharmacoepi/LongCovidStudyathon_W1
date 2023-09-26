@@ -322,3 +322,41 @@ addPriorObservation_sql <- function(x,
   
   return(x)
 }
+
+addInObservation_sql <- function(x,
+                             cdm = attr(x, "cdm_reference"),
+                             indexDate = "cohort_start_date",
+                             name = "in_observation") {
+  ## check for standard types of user error
+  personVariable <- checkX(x)
+  checkCdm(cdm, c("observation_period"))
+  checkVariableInX(indexDate, x)
+  checkmate::assertCharacter(name, any.missing = FALSE, len = 1)
+  name <- checkNewName(name, x)
+  
+  # Start code
+  name <- rlang::enquo(name)
+  
+  x <- x %>%
+    addDemographics_sql(
+      cdm = cdm,
+      indexDate = indexDate,
+      age = FALSE,
+      sex = FALSE,
+      priorObservation = TRUE,
+      futureObservation = TRUE
+    ) %>%
+    dplyr::mutate(
+      !!name := as.numeric(dplyr::if_else(
+        is.na(.data$prior_observation) | is.na(.data$future_observation) | .data$prior_observation < 0 | .data$future_observation < 0, 0, 1
+      ))
+    ) %>%
+    dplyr::select(
+      -"prior_observation", -"future_observation"
+    )
+  
+  x <- x %>%
+    CDMConnector::computeQuery()
+  
+  return(x)
+}

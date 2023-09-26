@@ -22,8 +22,14 @@ do_exclusion <- function(cdm, cohort, id, S_start_date) {
   cohort <- cohort %>% dplyr::select(-date_previous) %>% computeQuery()
   
   # Check the individuals are in observation at cohort entry
-  cohort <- cohort %>% addInObservation(cdm) %>%
-    filter(.data$in_observation == 1) %>% computeQuery()
+  if(sql_dem) {
+    cohort <- cohort %>% addInObservation_sql(cdm) %>%
+      filter(.data$in_observation == 1) %>% computeQuery()
+  } else {
+    cohort <- cohort %>% addInObservation(cdm) %>%
+      filter(.data$in_observation == 1) %>% computeQuery()
+  }
+
   attrition <- rbind(attrition,
                      dplyr::tibble(number_observations = cohort %>%
                                      dplyr::tally() %>% dplyr::pull(),
