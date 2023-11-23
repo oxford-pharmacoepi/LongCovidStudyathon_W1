@@ -39,6 +39,12 @@ if(!onlyLC){
                    OverlapCohortsInfName, OverlapCohortsReinfName)
 }
 
+if(noTestNeg) {
+    CohortNames <- c(InitialCohortsName, BaseCohortsName, LongCovidCohortsName,
+                     PascCohortsName, MCCohortsName, OverlapCohortsInfName,
+                     OverlapCohortsReinfName)
+}
+
 # Read initial cohorts
 if (readInitialCohorts){
   info(logger, 'INSTANTIATING INITIAL COHORTS')

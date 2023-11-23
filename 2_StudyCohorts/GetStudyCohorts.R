@@ -42,7 +42,7 @@ negative_init <- cdm[[InitialCohortsName]] %>%
 
 covid <- do_exclusion(cdm, newinf_init, id = 1,
                       S_start_date = study_start_date)
-if(!onlyLC && negative_init %>% dplyr::tally() %>% dplyr::pull() != 0) {
+if(!onlyLC && !noTestNeg && negative_init %>% dplyr::tally() %>% dplyr::pull() != 0) {
   nocovid <- do_exclusion(cdm, negative_init, id = 2,
                           S_start_date = study_start_date)
 }
@@ -73,7 +73,7 @@ attrition_censor_positive <- attrition_censor_positive %>% dplyr::mutate(cohort_
   computeQuery()
 
 
-if(!onlyLC && negative_init %>% dplyr::tally() %>% dplyr::pull() != 0) {
+if(!onlyLC && !noTestNeg && negative_init %>% dplyr::tally() %>% dplyr::pull() != 0) {
   # Tested negative "final"
   negativetest <- nocovid[[1]]
   negativetest <- negativetest %>% dplyr::mutate(cohort_definition_id = 3) %>%
@@ -112,7 +112,7 @@ write.csv(
   file = here::here(output_at, "attrition_base_censoring.csv")
 )
 
-if(!onlyLC) {
+if(!onlyLC && !noTestNeg) {
   names_final_cohorts <- dplyr::tibble(table_name = BaseCohortsName,
                                        cohort_definition_id = c(1:3),
                                        cohort_name = c("infection","reinfection","test_negative"))
@@ -236,17 +236,17 @@ if(!onlyLC) {
     cohortSetRef = insertTable(attr(table_mc, "cohort_set"), cdm, paste0(MCCohortsName, "_set")),
     cohortCountRef = insertTable(attr(table_mc, "cohort_count"), cdm, paste0(MCCohortsName, "_count"))
   )
-  
-  if(!onlyLC) {
-    cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
-                      cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
-                                       PascCohortsName,MCCohortsName))
-  } else {
-    cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
-                      cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName
-                                       ))
-  }
 
+}
+
+if(!onlyLC) {
+  cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+                    cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
+                                     PascCohortsName,MCCohortsName))
+} else {
+  cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+                    cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName
+                    ))
 }
 
 # --------------------------------------------------------------------
@@ -316,7 +316,7 @@ cdm[[OverlapCohortsReinfName]] <- newGeneratedCohortSet(
   cohortCountRef = insertTable(attr(overlap_cohorts, "cohort_count"), cdm, paste0(OverlapCohortsReinfName, "_count"))
 )
 
-if(!onlyLC) {
+if(!onlyLC && !noTestNeg) {
   message("Getting overlap testneg cohorts")
   info(logger, '-- Getting overlap testneg cohorts')
   
@@ -343,16 +343,9 @@ if(!onlyLC) {
   )
 }
 
-if(!onlyLC) {
-  cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
-                    cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
-                                     PascCohortsName,MCCohortsName,OverlapCohortsInfName,
-                                     OverlapCohortsReinfName, OverlapCohortsTestnegName))
-} else {
-  cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
-                    cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
-                                     OverlapCohortsInfName, OverlapCohortsReinfName))
-}
+cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+                    cohortTables = CohortNames)
+
 
 # --------------------------------------------------------------------
 

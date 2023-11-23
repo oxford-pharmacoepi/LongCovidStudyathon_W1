@@ -5,16 +5,9 @@ output_ip <- file.path(tempDir,"IP")
 if (!file.exists(output_ip)){
   dir.create(output_ip, recursive = TRUE)}
 
-if(!onlyLC) {
   cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
-                    cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
-                                     PascCohortsName,MCCohortsName,OverlapCohortsInfName,
-                                     OverlapCohortsReinfName, OverlapCohortsTestnegName))
-} else {
-  cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
-                    cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
-                                     OverlapCohortsInfName, OverlapCohortsReinfName))
-}
+                    cohortTables = CohortNames)
+
 
 # ----------------------------------------------------------------
 # 1a: LC on base cohorts
@@ -116,7 +109,7 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Reinf_Age_attrition.csv")))
 
 
-if(!onlyLC) {
+if(!onlyLC && !noTestNeg) {
   message("Calculating IP for testneg")
   info(logger, "Calculating IP for testneg")
   
@@ -240,7 +233,7 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
   dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_reinf_AllandSex_attrition.csv")))
 
-if(!onlyLC) {
+if(!onlyLC && !noTestNeg) {
   inc <- IncidencePrevalence::estimateIncidence(
     cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsTestnegName, 
     interval = c("years","months","overall"),
@@ -327,7 +320,7 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
   dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_reinf_Age_attrition.csv")))
 
-if(!onlyLC)  {
+if(!onlyLC && !noTestNeg)  {
   inc <- IncidencePrevalence::estimateIncidence(
     cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsTestnegName, 
     interval = c("years","months","overall"),
