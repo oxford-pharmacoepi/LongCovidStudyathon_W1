@@ -28,6 +28,7 @@ OverlapCohortsTestnegName <- paste0(table_stem,"_overlaptestnegcohorts")
 
 # Read functions needed throughout the study
 source(here::here("functions.R"))
+source(here::here("checks.R"))
 
 # Create vector with all names
 if(!onlyLC){

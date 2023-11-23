@@ -8,9 +8,16 @@ do_exclusion <- function(cdm, cohort, id, S_start_date) {
   )
   
   # Apply washout 42 days
-  cohort <- cohort %>% 
-    addCohortIntersectDays(cdm, targetCohortTable = InitialCohortsName, targetCohortId = id, window = list(c(-Inf,-1)), order = "last", nameStyle = "date_previous") %>%
-    computeQuery()
+  if(sql_dem) {
+    cohort <- cohort %>% 
+      addCohortIntersectDays_sql(cdm, targetCohortTable = InitialCohortsName, targetCohortId = id, window = list(c(-Inf,-1)), order = "last", nameStyle = "date_previous") %>%
+      computeQuery()
+  } else {
+    cohort <- cohort %>% 
+      addCohortIntersectDays(cdm, targetCohortTable = InitialCohortsName, targetCohortId = id, window = list(c(-Inf,-1)), order = "last", nameStyle = "date_previous") %>%
+      computeQuery()
+  }
+
   
   cohort <- cohort %>%
     filter(is.na(.data$date_previous) | .data$date_previous < -42) %>% computeQuery()
@@ -22,27 +29,45 @@ do_exclusion <- function(cdm, cohort, id, S_start_date) {
   cohort <- cohort %>% dplyr::select(-date_previous) %>% computeQuery()
   
   # Check the individuals are in observation at cohort entry
-  cohort <- cohort %>% addInObservation(cdm) %>%
-    filter(.data$in_observation == 1) %>% computeQuery()
+  if(sql_dem) {
+    cohort <- cohort %>% addInObservation_sql(cdm) %>%
+      filter(.data$in_observation == 1) %>% computeQuery()
+  } else {
+    cohort <- cohort %>% addInObservation(cdm) %>%
+      filter(.data$in_observation == 1) %>% computeQuery()
+  }
+
   attrition <- rbind(attrition,
                      dplyr::tibble(number_observations = cohort %>%
                                      dplyr::tally() %>% dplyr::pull(),
                                    reason = "In observation at cohort entry"))
   
-  # Prior history 365 days
-  cohort <- cohort %>% addPriorHistory(cdm) %>% computeQuery() 
-  cohort <- cohort %>% filter(.data$prior_history >= 365) %>% computeQuery()
+  # Prior observation 365 days
+  if(sql_dem) {
+    cohort <- cohort %>% addPriorObservation_sql(cdm) %>% computeQuery() 
+  } else {
+    cohort <- cohort %>% addPriorObservation(cdm) %>% computeQuery() 
+  }
+  
+  cohort <- cohort %>% filter(.data$prior_observation >= 365) %>% computeQuery()
   attrition <- rbind(attrition, 
                      dplyr::tibble(number_observations = cohort %>%
                                      dplyr::tally()
-                                   %>% dplyr::pull(), reason = paste0("365 days of prior history")))
+                                   %>% dplyr::pull(), reason = paste0("365 days of prior observation")))
   
-  cohort <- cohort %>% dplyr::select(-c(prior_history)) %>% computeQuery()
+  cohort <- cohort %>% dplyr::select(-c(prior_observation)) %>% computeQuery()
   
   # Historical influenza 90 days
-  cohort <- cohort %>%
-    addCohortIntersectDays(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 3, window = list(c(-90,-1)), order = "last", nameStyle = "last_flu") %>%
-    computeQuery()
+  if(sql_dem) {
+    cohort <- cohort %>%
+      addCohortIntersectDays_sql(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 3, window = list(c(-90,-1)), order = "last", nameStyle = "last_flu") %>%
+      computeQuery()
+  } else {
+    cohort <- cohort %>%
+      addCohortIntersectDays(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 3, window = list(c(-90,-1)), order = "last", nameStyle = "last_flu") %>%
+      computeQuery()
+  }
+
   
   cohort <- cohort %>% dplyr::filter(is.na(.data$last_flu)) %>% computeQuery()
   attrition <- rbind(attrition, 
@@ -60,9 +85,16 @@ do_exclusion <- function(cdm, cohort, id, S_start_date) {
                                                                       S_start_date)))
   
   # censor on observation_end, death, end of covid testing or study end date
-  cohort <- cohort %>% 
-    addCohortIntersectDate(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 1, window = list(c(1, 365)), order = "first", nameStyle = "next_covid") %>%
-    computeQuery()
+  if(sql_dem) {
+    cohort <- cohort %>% 
+      addCohortIntersectDate_sql(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 1, window = list(c(1, 365)), order = "first", nameStyle = "next_covid") %>%
+      computeQuery()
+  } else {
+    cohort <- cohort %>% 
+      addCohortIntersectDate(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 1, window = list(c(1, 365)), order = "first", nameStyle = "next_covid") %>%
+      computeQuery()
+  }
+
   # censor on observation_end, death, study end date, or covid (re)infection
   cohort <- cohort %>% dplyr::mutate(one_year_date = 
                                        CDMConnector::dateadd("cohort_start_date", 365)) %>%
@@ -118,9 +150,16 @@ do_exclusion <- function(cdm, cohort, id, S_start_date) {
   
   # Not for any "re-event" cohort
   # No historical covid-19 infection
-  first_event <- first_event %>% 
-    addCohortIntersectDate(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 1, window = list(c(-Inf, -1)), order = "last", nameStyle = "event") %>%
-    computeQuery()
+  if(sql_dem) {
+    first_event <- first_event %>% 
+      addCohortIntersectDate_sql(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 1, window = list(c(-Inf, -1)), order = "last", nameStyle = "event") %>%
+      computeQuery()
+  } else {
+    first_event <- first_event %>% 
+      addCohortIntersectDate(cdm, targetCohortTable = InitialCohortsName, targetCohortId = 1, window = list(c(-Inf, -1)), order = "last", nameStyle = "event") %>%
+      computeQuery()
+  }
+
   
   first_event <- first_event %>% dplyr::filter(is.na(.data$event)) %>% computeQuery()
   attrition <- rbind(attrition, 
@@ -232,11 +271,20 @@ do_overlap <- function(cdm, base_cohort_id, outcome_cohort_id, overlap_cohort_id
                      dplyr::tibble(number_observations = overlap %>% dplyr::tally()
                                    %>% dplyr::pull(), reason = "Outcome in window (90,365)"))
   
-  overlap <- overlap %>% 
-    addCohortIntersectFlag(
-      cdm, targetCohortTable = tableName, targetCohortId = outcome_cohort_id, 
-      window = list(c(-180,-1)), nameStyle = "event") %>%
-    computeQuery()
+  if(sql_dem) {
+    overlap <- overlap %>% 
+      addCohortIntersectFlag_sql(
+        cdm, targetCohortTable = tableName, targetCohortId = outcome_cohort_id, 
+        window = list(c(-180,-1)), nameStyle = "event") %>%
+      computeQuery()
+  } else {
+    overlap <- overlap %>% 
+      addCohortIntersectFlag(
+        cdm, targetCohortTable = tableName, targetCohortId = outcome_cohort_id, 
+        window = list(c(-180,-1)), nameStyle = "event") %>%
+      computeQuery()
+  }
+
   
   if("event" %in% colnames(overlap)) {
     overlap <- overlap %>% 
