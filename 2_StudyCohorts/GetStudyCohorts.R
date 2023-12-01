@@ -363,7 +363,8 @@ attr(bases, "cohort_count") <- getCohortCount(bases)
 cdm[[BaseCohortsName]] <- newGeneratedCohortSet(
   cohortRef = computeQuery(bases, BaseCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
   cohortSetRef = insertTable(attr(bases, "cohort_set"), cdm, paste0(BaseCohortsName, "_set")),
-  cohortCountRef = insertTable(attr(bases, "cohort_count"), cdm, paste0(BaseCohortsName, "_count"))
+  cohortCountRef = insertTable(attr(bases, "cohort_count"), cdm, paste0(BaseCohortsName, "_count")),
+  overwrite = TRUE
 )
 
 # ----------------------------------------------------------------------
