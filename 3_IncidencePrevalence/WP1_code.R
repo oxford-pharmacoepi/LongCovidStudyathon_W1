@@ -22,9 +22,10 @@ message("- No strata and sex strata")
 # No strata and sex strata
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
-  strataTable = BaseCohortsName,
+  name = "denominator",
+  targetCohortTable = BaseCohortsName,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-  strataCohortId = 1,
+  targetCohortId = 1,
   sex = c("Male", "Female", "Both")
 )
 
@@ -43,8 +44,9 @@ message("- Age strata")
 # Age strata
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
-  strataTable = BaseCohortsName,
-  strataCohortId = 1,
+  name = "denominator",
+  targetCohortTable = BaseCohortsName,
+  targetCohortId = 1,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
   ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
 )
@@ -69,9 +71,10 @@ message("- No strata and sex strata")
 # No strata and sex strata
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
-  strataTable = BaseCohortsName,
+  name = "denominator",
+  targetCohortTable = BaseCohortsName,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-  strataCohortId = 2,
+  targetCohortId = 2,
   sex = c("Male", "Female", "Both")
 )
 
@@ -90,8 +93,9 @@ message("- Age strata")
 # Age strata
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
-  strataTable = BaseCohortsName,
-  strataCohortId = 2,
+  name = "denominator",
+  targetCohortTable = BaseCohortsName,
+  targetCohortId = 2,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
   ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
 )
@@ -117,9 +121,10 @@ if(!onlyLC && !noTestNeg) {
   # No strata and sex strata
   cdm <- IncidencePrevalence::generateDenominatorCohortSet(
     cdm =  cdm,
-    strataTable = BaseCohortsName,
+    name = "denominator",
+    targetCohortTable = BaseCohortsName,
     cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-    strataCohortId = 3,
+    targetCohortId = 3,
     sex = c("Male", "Female", "Both")
   )
   
@@ -138,8 +143,9 @@ if(!onlyLC && !noTestNeg) {
   # Age strata
   cdm <- IncidencePrevalence::generateDenominatorCohortSet(
     cdm =  cdm,
-    strataTable = BaseCohortsName,
-    strataCohortId = 3,
+    name = "denominator",
+    targetCohortTable = BaseCohortsName,
+    targetCohortId = 3,
     cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
     ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
   )
@@ -166,6 +172,7 @@ message("- No strata and sex strata")
 # No strata and sex strata
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
+  name = "denominator",
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
   daysPriorHistory = 365,
   sex = c("Male", "Female", "Both")
@@ -253,6 +260,7 @@ message("- Age strata")
 # Age strata
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
+  name = "denominator",
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
   daysPriorHistory = 365,
   ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
@@ -370,7 +378,8 @@ write.csv(result, file = here::here(tempDir, "tableOne_bases.csv"))
 
 cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
-  daysPriorHistory = 365,
+  name = "denominator",
+  daysPriorObservation = 365,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability))
 )
 
