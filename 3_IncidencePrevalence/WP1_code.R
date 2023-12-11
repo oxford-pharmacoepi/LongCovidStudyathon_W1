@@ -370,8 +370,8 @@ result <- PatientProfiles::summariseResult(
   functions = list(
     numericVariables = c("mean","median", "q25", "q75","sd", "iqr","min","max"),
     dateVariables = c("mean","median", "q25", "q75","min","max"),
-    binaryVariables = c("count", "%"),
-    categoricalVariables = c("count", "%")
+    binaryVariables = c("count", "percentage"),
+    categoricalVariables = c("count", "percentage")
   ))
 
 write.csv(result, file = here::here(tempDir, "tableOne_bases.csv"))
