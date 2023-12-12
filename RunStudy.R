@@ -17,14 +17,14 @@ logfile(logger) <- log_file
 level(logger) <- "INFO"
 
 # Create table names to use throughout the study
-InitialCohortsName <- paste0(table_stem,"_initialcohorts")
-BaseCohortsName <- paste0(table_stem,"_basecohorts")
-LongCovidCohortsName <- paste0(table_stem,"_lccohorts")
-PascCohortsName <- paste0(table_stem,"_pasccohorts")
-MCCohortsName <- paste0(table_stem,"_mccohorts")
-OverlapCohortsInfName <- paste0(table_stem,"_overlapinfcohorts")
-OverlapCohortsReinfName <- paste0(table_stem,"_overlapreinfcohorts")
-OverlapCohortsTestnegName <- paste0(table_stem,"_overlaptestnegcohorts")
+InitialCohortsName <- paste0("initialcohorts")
+BaseCohortsName <- paste0("basecohorts")
+LongCovidCohortsName <- paste0("lccohorts")
+PascCohortsName <- paste0("pasccohorts")
+MCCohortsName <- paste0("mccohorts")
+OverlapCohortsInfName <- paste0("overlapinfcohorts")
+OverlapCohortsReinfName <- paste0("overlapreinfcohorts")
+OverlapCohortsTestnegName <- paste0("overlaptestnegcohorts")
 
 # Read functions needed throughout the study
 source(here::here("functions.R"))
@@ -50,7 +50,8 @@ if(noTestNeg) {
 if (readInitialCohorts){
   info(logger, 'INSTANTIATING INITIAL COHORTS')
   cdm <- cdmFromCon(db, cdm_database_schema, 
-                    writeSchema = results_database_schema)
+                    writeSchema = c(schema = results_database_schema,
+                                    prefix = table_stem))
   source(here("1_InitialCohorts", "InstantiateStudyCohorts.R"), local=TRUE)
   info(logger, 'GOT INITIAL COHORTS')
 } else {
@@ -58,9 +59,10 @@ if (readInitialCohorts){
   Initial_cohorts <- CDMConnector::readCohortSet(
     here::here("1_InitialCohorts", "Jsons")) %>%
     dplyr::mutate(cohort_name = substr(cohort_name, 5, nchar(cohort_name)))
-  cdm <- cdmFromCon(
-    db, cdm_database_schema, writeSchema = results_database_schema,
-    cohortTables = InitialCohortsName)
+  cdm <- cdm_from_con(
+    db, cdm_database_schema, writeSchema = c(schema = results_database_schema,
+                                             prefix = table_stem),
+    cohort_tables = InitialCohortsName)
   info(logger, 'INITIAL COHORTS READ')
 }
 

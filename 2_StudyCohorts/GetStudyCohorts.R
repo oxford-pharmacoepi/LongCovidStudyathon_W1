@@ -136,7 +136,8 @@ cdm[[BaseCohortsName]] <- newGeneratedCohortSet(
   overwrite = TRUE
 )
 
-cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = c(schema = results_database_schema,
+                                                           prefix = table_stem),
                   cohortTables = c(InitialCohortsName,BaseCohortsName))
 
 # ---------------------------------------------------------------------
@@ -185,7 +186,8 @@ cdm[[LongCovidCohortsName]] <- newGeneratedCohortSet(
   overwrite = TRUE
 )
 
-cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = c(schema = results_database_schema,
+                                                           prefix = table_stem),
                   cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName))
 
 if(!onlyLC) {
@@ -244,11 +246,13 @@ if(!onlyLC) {
 }
 
 if(!onlyLC) {
-  cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+  cdm <- cdmFromCon(db, cdm_database_schema,  writeSchema = c(schema = results_database_schema,
+                                                              prefix = table_stem),
                     cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName,
                                      PascCohortsName,MCCohortsName))
 } else {
-  cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+  cdm <- cdmFromCon(db, cdm_database_schema,  writeSchema = c(schema = results_database_schema,
+                                                              prefix = table_stem),
                     cohortTables = c(InitialCohortsName,BaseCohortsName,LongCovidCohortsName
                     ))
 }
@@ -350,7 +354,8 @@ if(!onlyLC && !noTestNeg) {
   )
 }
 
-cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+cdm <- cdmFromCon(db, cdm_database_schema,  writeSchema = c(schema = results_database_schema,
+                                                            prefix = table_stem),
                     cohortTables = CohortNames)
 
 

@@ -5,7 +5,8 @@ output_ip <- file.path(tempDir,"IP")
 if (!file.exists(output_ip)){
   dir.create(output_ip, recursive = TRUE)}
 
-  cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = results_database_schema,
+  cdm <- cdmFromCon(db, cdm_database_schema,  writeSchema = c(schema = results_database_schema,
+                                                              prefix = table_stem),
                     cohortTables = CohortNames)
 
 
