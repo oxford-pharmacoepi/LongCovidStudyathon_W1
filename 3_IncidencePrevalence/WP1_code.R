@@ -27,8 +27,16 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   targetCohortTable = BaseCohortsName,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
   targetCohortId = 1,
-  sex = c("Male", "Female", "Both")
+  sex = c("Male", "Female", "Both"),
+  overwrite = TRUE
 )
+
+attr(cdm[[OverlapCohortsInfName]], "cohort_set") <- attr(cdm[[OverlapCohortsInfName]], "cohort_set") %>%
+  dplyr::right_join(
+    attr(cdm[[OverlapCohortsInfName]], "cohort_count") %>%
+      dplyr::select("cohort_definition_id"),
+    by = "cohort_definition_id"
+  )
 
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsInfName, 
@@ -49,7 +57,8 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   targetCohortTable = BaseCohortsName,
   targetCohortId = 1,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
+  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150)),
+  overwrite = TRUE
 )
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -76,8 +85,16 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   targetCohortTable = BaseCohortsName,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
   targetCohortId = 2,
-  sex = c("Male", "Female", "Both")
+  sex = c("Male", "Female", "Both"),
+  overwrite = TRUE
 )
+
+attr(cdm[[OverlapCohortsReinfName]], "cohort_set") <- attr(cdm[[OverlapCohortsReinfName]], "cohort_set") %>%
+  dplyr::right_join(
+    attr(cdm[[OverlapCohortsReinfName]], "cohort_count") %>%
+      dplyr::select("cohort_definition_id"),
+    by = "cohort_definition_id"
+  )
 
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsReinfName, 
@@ -98,7 +115,8 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   targetCohortTable = BaseCohortsName,
   targetCohortId = 2,
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
+  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150)),
+  overwrite = TRUE
 )
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -126,8 +144,16 @@ if(!onlyLC && !noTestNeg) {
     targetCohortTable = BaseCohortsName,
     cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
     targetCohortId = 3,
-    sex = c("Male", "Female", "Both")
+    sex = c("Male", "Female", "Both"),
+    overwrite = TRUE
   )
+  
+  attr(cdm[[OverlapCohortsTestnegName]], "cohort_set") <- attr(cdm[[OverlapCohortsTestnegName]], "cohort_set") %>%
+    dplyr::right_join(
+      attr(cdm[[OverlapCohortsTestnegName]], "cohort_count") %>%
+        dplyr::select("cohort_definition_id"),
+      by = "cohort_definition_id"
+    )
   
   inc <- IncidencePrevalence::estimateIncidence(
     cdm = cdm, denominatorTable = "denominator", outcomeTable = OverlapCohortsTestnegName, 
@@ -148,7 +174,8 @@ if(!onlyLC && !noTestNeg) {
     targetCohortTable = BaseCohortsName,
     targetCohortId = 3,
     cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-    ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
+    ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150)),
+    overwrite = TRUE
   )
   
   inc <- IncidencePrevalence::estimateIncidence(
@@ -176,8 +203,16 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   name = "denominator",
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
   daysPriorHistory = 365,
-  sex = c("Male", "Female", "Both")
+  sex = c("Male", "Female", "Both"),
+  overwrite = TRUE
 )
+
+attr(cdm[[LongCovidCohortsName]], "cohort_set") <- attr(cdm[[LongCovidCohortsName]], "cohort_set") %>%
+  dplyr::right_join(
+    attr(cdm[[LongCovidCohortsName]], "cohort_count") %>%
+      dplyr::select("cohort_definition_id"),
+    by = "cohort_definition_id"
+  )
 
 inc <- IncidencePrevalence::estimateIncidence(
   cdm = cdm, denominatorTable = "denominator", outcomeTable = LongCovidCohortsName, 
@@ -192,6 +227,13 @@ attr(inc, "attrition") <- attr(inc, "attrition") %>%
 write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_LC_AllandSex_attrition.csv")))
 
 if(!onlyLC) {
+  attr(cdm[[PascCohortsName]], "cohort_set") <- attr(cdm[[PascCohortsName]], "cohort_set") %>%
+    dplyr::right_join(
+      attr(cdm[[PascCohortsName]], "cohort_count") %>%
+        dplyr::select("cohort_definition_id"),
+      by = "cohort_definition_id"
+    )
+  
   inc <- IncidencePrevalence::estimateIncidence(
     cdm = cdm, denominatorTable = "denominator", outcomeTable = PascCohortsName, 
     interval = c("years","months","overall"),
@@ -203,6 +245,13 @@ if(!onlyLC) {
   attr(inc, "attrition") <- attr(inc, "attrition") %>%
     dplyr::mutate(dplyr::across(dplyr::starts_with("number") | dplyr::starts_with("excluded"), ~ dplyr::if_else(.x < 5, NA, .x)))
   write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Allpop_Pasc_AllandSex_attrition.csv")))
+  
+  attr(cdm[[MCCohortsName]], "cohort_set") <- attr(cdm[[MCCohortsName]], "cohort_set") %>%
+    dplyr::right_join(
+      attr(cdm[[MCCohortsName]], "cohort_count") %>%
+        dplyr::select("cohort_definition_id"),
+      by = "cohort_definition_id"
+    )
   
   inc <- IncidencePrevalence::estimateIncidence(
     cdm = cdm, denominatorTable = "denominator", outcomeTable = MCCohortsName, 
@@ -264,7 +313,8 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   name = "denominator",
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
   daysPriorHistory = 365,
-  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150))
+  ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150)),
+  overwrite = TRUE
 )
 
 inc <- IncidencePrevalence::estimateIncidence(
@@ -381,7 +431,8 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   daysPriorObservation = 365,
-  cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability))
+  cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
+  overwrite = TRUE
 )
 
 if(sql_dem) {

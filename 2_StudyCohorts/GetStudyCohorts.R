@@ -129,12 +129,14 @@ attr(bases, "cohort_set") <- names_final_cohorts %>%
 
 attr(bases, "cohort_count") <- getCohortCount(bases)
 
+attr(bases, "cohort_attrition") <- CDMConnector::cohort_attrition(bases)
+
 cdm[[BaseCohortsName]] <- newGeneratedCohortSet(
-  cohortRef = computeQuery(bases, BaseCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
-  cohortSetRef = insertTable(attr(bases, "cohort_set"), cdm, paste0(BaseCohortsName, "_set")),
-  cohortCountRef = insertTable(attr(bases, "cohort_count"), cdm, paste0(BaseCohortsName, "_count")),
-  overwrite = TRUE
-)
+      cohortRef = computeQuery(bases, BaseCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
+      cohortSetRef = attr(bases, "cohort_set"),
+      cohortAttritionRef = attr(bases, "cohort_attrition"),
+      cohortCountRef = attr(bases, "cohort_count"), overwrite = TRUE
+ )
 
 cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = c(schema = results_database_schema,
                                                            prefix = table_stem),
@@ -179,11 +181,13 @@ attr(lc_final, "cohort_set") <- names_final_cohorts %>%
 
 attr(lc_final, "cohort_count") <- getCohortCount(lc_final)
 
+attr(lc_final, "cohort_attrition") <- CDMConnector::cohort_attrition(lc_final)
+
 cdm[[LongCovidCohortsName]] <- newGeneratedCohortSet(
   cohortRef = computeQuery(lc_final, LongCovidCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
-  cohortSetRef = insertTable(attr(lc_final, "cohort_set"), cdm, paste0(LongCovidCohortsName, "_set")),
-  cohortCountRef = insertTable(attr(lc_final, "cohort_count"), cdm, paste0(LongCovidCohortsName, "_count")),
-  overwrite = TRUE
+  cohortSetRef = attr(lc_final, "cohort_set"),
+  cohortAttritionRef = attr(lc_final, "cohort_attrition"),
+  cohortCountRef = attr(lc_final, "cohort_count"), overwrite = TRUE
 )
 
 cdm <- cdmFromCon(db, cdm_database_schema, writeSchema = c(schema = results_database_schema,
@@ -213,11 +217,13 @@ if(!onlyLC) {
   
   attr(table_pasc, "cohort_count") <- getCohortCount(table_pasc)
   
+  attr(table_pasc, "cohort_attrition") <- CDMConnector::cohort_attrition(lc_final)
+  
   cdm[[PascCohortsName]] <- newGeneratedCohortSet(
     cohortRef = computeQuery(table_pasc, PascCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
-    cohortSetRef = insertTable(attr(table_pasc, "cohort_set"), cdm, paste0(PascCohortsName, "_set")),
-    cohortCountRef = insertTable(attr(table_pasc, "cohort_count"), cdm, paste0(PascCohortsName, "_count")),
-    overwrite = TRUE
+    cohortSetRef = attr(table_pasc, "cohort_set"),
+    cohortAttritionRef = attr(table_pasc, "cohort_attrition"),
+    cohortCountRef = attr(table_pasc, "cohort_count"), overwrite = TRUE
   )
   
   # Medical conditions
@@ -236,11 +242,13 @@ if(!onlyLC) {
   
   attr(table_mc, "cohort_count") <- getCohortCount(table_mc)
   
+  attr(table_mc, "cohort_attrition") <- CDMConnector::cohort_attrition(lc_final)
+  
   cdm[[MCCohortsName]] <- newGeneratedCohortSet(
     cohortRef = computeQuery(table_mc, MCCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
-    cohortSetRef = insertTable(attr(table_mc, "cohort_set"), cdm, paste0(MCCohortsName, "_set")),
-    cohortCountRef = insertTable(attr(table_mc, "cohort_count"), cdm, paste0(MCCohortsName, "_count")),
-    overwrite = TRUE
+    cohortSetRef = attr(table_mc, "cohort_set"),
+    cohortAttritionRef = attr(table_mc, "cohort_attrition"),
+    cohortCountRef = attr(table_mc, "cohort_count"), overwrite = TRUE
   )
 
 }
@@ -286,11 +294,13 @@ attr(overlap_cohorts, "cohort_set") <- names_final_cohorts %>%
 
 attr(overlap_cohorts, "cohort_count") <- getCohortCount(overlap_cohorts)
 
+attr(overlap_cohorts, "cohort_attrition") <- CDMConnector::cohort_attrition(lc_final)
+
 cdm[[OverlapCohortsInfName]] <- newGeneratedCohortSet(
   cohortRef = computeQuery(overlap_cohorts, OverlapCohortsInfName, FALSE, attr(cdm, "write_schema"), TRUE),
-  cohortSetRef = insertTable(attr(overlap_cohorts, "cohort_set"), cdm, paste0(OverlapCohortsInfName, "_set")),
-  cohortCountRef = insertTable(attr(overlap_cohorts, "cohort_count"), cdm, paste0(OverlapCohortsInfName, "_count")),
-  overwrite = TRUE
+  cohortSetRef = attr(overlap_cohorts, "cohort_set"),
+  cohortAttritionRef = attr(overlap_cohorts, "cohort_attrition"),
+  cohortCountRef = attr(overlap_cohorts, "cohort_count"), overwrite = TRUE
 )
 
 message("Getting overlap reinf cohorts")
@@ -319,11 +329,13 @@ attr(overlap_cohorts, "cohort_set") <- names_final_cohorts %>%
 
 attr(overlap_cohorts, "cohort_count") <- getCohortCount(overlap_cohorts)
 
+attr(overlap_cohorts, "cohort_attrition") <- CDMConnector::cohort_attrition(lc_final)
+
 cdm[[OverlapCohortsReinfName]] <- newGeneratedCohortSet(
   cohortRef = computeQuery(overlap_cohorts, OverlapCohortsReinfName, FALSE, attr(cdm, "write_schema"), TRUE),
-  cohortSetRef = insertTable(attr(overlap_cohorts, "cohort_set"), cdm, paste0(OverlapCohortsReinfName, "_set")),
-  cohortCountRef = insertTable(attr(overlap_cohorts, "cohort_count"), cdm, paste0(OverlapCohortsReinfName, "_count")),
-  overwrite = TRUE
+  cohortSetRef = attr(overlap_cohorts, "cohort_set"),
+  cohortAttritionRef = attr(overlap_cohorts, "cohort_attrition"),
+  cohortCountRef = attr(overlap_cohorts, "cohort_count"), overwrite = TRUE
 )
 
 if(!onlyLC && !noTestNeg) {
@@ -346,11 +358,13 @@ if(!onlyLC && !noTestNeg) {
   
   attr(overlap_cohorts, "cohort_count") <- getCohortCount(overlap_cohorts)
   
+  attr(overlap_cohorts, "cohort_attrition") <- CDMConnector::cohort_attrition(lc_final)
+  
   cdm[[OverlapCohortsTestnegName]] <- newGeneratedCohortSet(
     cohortRef = computeQuery(overlap_cohorts, OverlapCohortsTestnegName, FALSE, attr(cdm, "write_schema"), TRUE),
-    cohortSetRef = insertTable(attr(overlap_cohorts, "cohort_set"), cdm, paste0(OverlapCohortsTestnegName, "_set")),
-    cohortCountRef = insertTable(attr(overlap_cohorts, "cohort_count"), cdm, paste0(OverlapCohortsTestnegName, "_count")),
-    overwrite = TRUE
+    cohortSetRef = attr(overlap_cohorts, "cohort_set"),
+    cohortAttritionRef = attr(overlap_cohorts, "cohort_attrition"),
+    cohortCountRef = attr(overlap_cohorts, "cohort_count"), overwrite = TRUE
   )
 }
 
@@ -372,11 +386,13 @@ attr(bases, "cohort_set") <- names_final_cohorts %>%
 
 attr(bases, "cohort_count") <- getCohortCount(bases)
 
+attr(bases, "cohort_attrition") <- CDMConnector::cohort_attrition(lc_final)
+
 cdm[[BaseCohortsName]] <- newGeneratedCohortSet(
   cohortRef = computeQuery(bases, BaseCohortsName, FALSE, attr(cdm, "write_schema"), TRUE),
-  cohortSetRef = insertTable(attr(bases, "cohort_set"), cdm, paste0(BaseCohortsName, "_set")),
-  cohortCountRef = insertTable(attr(bases, "cohort_count"), cdm, paste0(BaseCohortsName, "_count")),
-  overwrite = TRUE
+  cohortSetRef = attr(bases, "cohort_set"),
+  cohortAttritionRef = attr(bases, "cohort_attrition"),
+  cohortCountRef = attr(bases, "cohort_count"), overwrite = TRUE
 )
 
 # ----------------------------------------------------------------------
