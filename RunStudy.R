@@ -60,7 +60,7 @@ if (readInitialCohorts){
     here::here("1_InitialCohorts", "Jsons")) %>%
     dplyr::mutate(cohort_name = substr(cohort_name, 5, nchar(cohort_name)))
   cdm <- cdm_from_con(
-    db, cdm_database_schema, writeSchema = c(schema = results_database_schema,
+    db, cdm_database_schema, write_schema = c(schema = results_database_schema,
                                              prefix = table_stem),
     cohort_tables = InitialCohortsName)
   info(logger, 'INITIAL COHORTS READ')
