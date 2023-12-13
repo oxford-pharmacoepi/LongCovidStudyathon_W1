@@ -202,7 +202,7 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-  daysPriorHistory = 365,
+  daysPriorObservation = 365,
   sex = c("Male", "Female", "Both"),
   overwrite = TRUE
 )
@@ -312,7 +312,7 @@ cdm <- IncidencePrevalence::generateDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
-  daysPriorHistory = 365,
+  daysPriorObservation = 365,
   ageGroup = list(c(0,6),c(7,11),c(12,18),c(19,40),c(41,64),c(65,150)),
   overwrite = TRUE
 )
