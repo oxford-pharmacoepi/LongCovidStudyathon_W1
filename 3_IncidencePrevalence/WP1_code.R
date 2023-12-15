@@ -419,7 +419,7 @@ result <- PatientProfiles::summariseResult(
   bases, 
   strata = list("base_id" = "cohort_definition_id"),
   functions = list(
-    numericVariables = c("mean","median", "q25", "q75","sd", "iqr","min","max"),
+    numericVariables = c("mean","median", "q25", "q75","sd","min","max"),
     dateVariables = c("mean","median", "q25", "q75","min","max"),
     binaryVariables = c("count", "percentage"),
     categoricalVariables = c("count", "percentage")
