@@ -21,7 +21,7 @@ info(logger, "Calculating IP for inf")
 
 message("- No strata and sex strata")
 # No strata and sex strata
-cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+cdm <- IncidencePrevalence::generateTargetDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   targetCohortTable = BaseCohortsName,
@@ -51,7 +51,7 @@ write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Inf_Allan
 
 message("- Age strata")
 # Age strata
-cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+cdm <- IncidencePrevalence::generateTargetDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   targetCohortTable = BaseCohortsName,
@@ -79,7 +79,7 @@ info(logger, "Calculating IP for reinf")
 
 message("- No strata and sex strata")
 # No strata and sex strata
-cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+cdm <- IncidencePrevalence::generateTargetDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   targetCohortTable = BaseCohortsName,
@@ -109,7 +109,7 @@ write.csv(attr(inc, "attrition"), file = here::here(output_ip, paste0("Reinf_All
 
 message("- Age strata")
 # Age strata
-cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+cdm <- IncidencePrevalence::generateTargetDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   targetCohortTable = BaseCohortsName,
@@ -138,7 +138,7 @@ if(!onlyLC && !noTestNeg) {
   
   message("- No strata and sex strata")
   # No strata and sex strata
-  cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+  cdm <- IncidencePrevalence::generateTargetDenominatorCohortSet(
     cdm =  cdm,
     name = "denominator",
     targetCohortTable = BaseCohortsName,
@@ -168,7 +168,7 @@ if(!onlyLC && !noTestNeg) {
   
   message("- Age strata")
   # Age strata
-  cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+  cdm <- IncidencePrevalence::generateTargetDenominatorCohortSet(
     cdm =  cdm,
     name = "denominator",
     targetCohortTable = BaseCohortsName,
@@ -198,7 +198,7 @@ info(logger, '-- Calculating incidence and prevalence for outcomes and base coho
 
 message("- No strata and sex strata")
 # No strata and sex strata
-cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+cdm <- IncidencePrevalence::generateTargetDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
@@ -308,7 +308,7 @@ info(logger, '-- Calculating incidence and prevalence for outcomes and base coho
 
 message("- Age strata")
 # Age strata
-cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+cdm <- IncidencePrevalence::generateTargetDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   cohortDateRange = c(as.Date("2020-09-01"), as.Date(latest_data_availability)),
@@ -427,7 +427,7 @@ result <- PatientProfiles::summariseResult(
 
 write.csv(result, file = here::here(tempDir, "tableOne_bases.csv"))
 
-cdm <- IncidencePrevalence::generateDenominatorCohortSet(
+cdm <- IncidencePrevalence::generateTargetDenominatorCohortSet(
   cdm =  cdm,
   name = "denominator",
   daysPriorObservation = 365,
